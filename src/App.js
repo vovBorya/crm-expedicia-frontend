@@ -12,8 +12,8 @@ const dataProvider = restProvider(process.env.REACT_APP_API_PATH);
 const App = () => (
   <Admin dataProvider={dataProvider}>
     <Resource
-      name="managers"
-      icon={icons.managers}
+      name="employees"
+      icon={icons.employees}
       list={ListGuesser}
     />
     <Resource

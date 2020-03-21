@@ -11,5 +11,5 @@ export default {
   customers: ContactPhoneIcon,
   expeditions: DeckIcon,
   deals: InsertDriveFileIcon,
-  managers: SupervisedUserCircleIcon,
+  employees: SupervisedUserCircleIcon,
 }
