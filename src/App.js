@@ -5,7 +5,8 @@ import restProvider from './utils/apiProvider';
 import icons from './components/icons'
 
 import { CustomerList } from './Pages/List'
-import { CustomerCreate } from './Forms/Create'
+import { CustomerCreate, ChildCreate } from './Forms/Create'
+import { CustomerShow } from './Forms/Show'
 
 const dataProvider = restProvider(process.env.REACT_APP_API_PATH);
 
@@ -20,7 +21,7 @@ const App = () => (
       name="customers"
       icon={icons.customers}
       list={CustomerList}
-      show={ShowGuesser}
+      show={CustomerShow}
       edit={EditGuesser}
       create={CustomerCreate}
     />
@@ -28,6 +29,8 @@ const App = () => (
       name="children"
       icon={icons.children}
       list={ListGuesser}
+      create={ChildCreate}
+      edit={EditGuesser}
     />
     <Resource
       name="deals"
