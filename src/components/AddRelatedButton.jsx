@@ -6,14 +6,16 @@ import { Button } from 'react-admin';
 
 const styles = {
   button: {
-    marginTop: '1em'
+    marginTop: '1em',
+    marginBottom: '1em',
+
   }
 };
 
 const AddRelatedButton = ({ classes, record, path, target }) => (
   <Button
     className={classes.button}
-    variant="raised"
+    variant="outlined"
     component={Link}
     to={`/${path}/create?${target}=${record.id}`}
     label="Add new"
