@@ -1,6 +1,7 @@
 import React from 'react';
 import { List, Datagrid, TextField, EmailField, EditButton, DeleteButton, FunctionField } from 'react-admin';
 
+import ActionsColumn from '../../components/ActionsColumn'
 
 export default props => (
   <List {...props}>
@@ -10,10 +11,7 @@ export default props => (
       <TextField source="firstName" />
       <TextField source="patronymic" />
       <EmailField source="email" />
-      <FunctionField label="Actions" textAlign="right" render={record => [
-        <EditButton {...props } record={record} />,
-        <DeleteButton {...props } record={record} />
-      ] } />
+      <ActionsColumn label="Actions" textAlign="right"/>
     </Datagrid>
   </List>
 );
