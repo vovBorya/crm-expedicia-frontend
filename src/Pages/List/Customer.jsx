@@ -10,7 +10,6 @@ export default props => (
       <TextField source="lastName" />
       <TextField source="firstName" />
       <TextField source="patronymic" />
-      <EmailField source="email" />
       <ActionsColumn label="Actions" textAlign="right"/>
     </Datagrid>
   </List>

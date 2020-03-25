@@ -19,7 +19,7 @@ import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 
 
 import AddRelatedButton from '../../components/AddRelatedButton';
-import ActionsColumn from '../../components/ActionsColumn'
+import ActionsColumn from '../../components/ActionsColumn';
 
 
 export default (props) => (
@@ -56,6 +56,10 @@ export default (props) => (
             <TextField source="firstName" />
             <TextField source="patronymic" />
             <DateField source="birthday" />
+            <ReferenceField source="parentId" reference="customers">
+              <FunctionField render={({lastName,
+                                        firstName, patronymic}) => `${lastName} ${firstName} ${patronymic}`} />
+            </ReferenceField>
             <ActionsColumn label="Actions" textAlign="right" />
           </Datagrid>
         </ReferenceManyField>

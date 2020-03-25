@@ -1,5 +1,8 @@
-import CustomerList from './Customer'
+import CustomerList from './Customer';
+import EmployeeList from './Employee.jsx';
+import ExpeditionList from './Expedition';
+import ChildList from './Child'
 
 export {
-  CustomerList
+  CustomerList, EmployeeList, ExpeditionList, ChildList
 }
