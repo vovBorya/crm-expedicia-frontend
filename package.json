@@ -4,18 +4,15 @@
   "private": true,
   "homepage": "https://crm-expedicia.gitlab.io/frontend",
   "dependencies": {
-    "@date-io/date-fns": "^2.4.0",
-    "@material-ui/pickers": "^3.2.10",
+    "@date-io/date-fns": "^1.3.13",
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^10.0.1",
     "@testing-library/user-event": "^10.0.0",
-    "date-fns": "^2.0.0-beta.5",
     "material-ui-pickers": "^2.2.4",
     "prop-types": "^15.7.2",
     "query-string": "^6.11.1",
     "react": "^16.13.0",
     "react-admin": "^3.3.2",
-    "react-admin-date-inputs": "^1.1.4",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0"
   },
@@ -39,9 +36,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.19.0"
   }
 }
