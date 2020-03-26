@@ -3,6 +3,7 @@ import { useInput, FieldTitle } from 'react-admin';
 import PropTypes from 'prop-types';
 import { DatePicker, TimePicker, DateTimePicker, MuiPickersUtilsProvider } from 'material-ui-pickers';
 import DateFnsUtils from '@date-io/date-fns';
+import { format } from 'date-fns'
 
 const Picker = ({ PickerComponent, ...fieldProps }) => {
 
@@ -14,15 +15,27 @@ const Picker = ({ PickerComponent, ...fieldProps }) => {
     className,
     isRequired,
     providerOptions,
+    parse,
+    valueFormat
   } = fieldProps;
 
   const { input, meta } = useInput({ source });
 
   const { touched, error } = meta;
 
+  const parseValue = (v) => {
+    let parseFunc;
+    if (parse) parseFunc = parse;
+    if (!parseFunc && valueFormat) parseFunc = (val) => format(val, valueFormat);
+    if (!parseFunc) parseFunc = (val => new Date(val).toISOString())
+    return parseFunc(v)
+  }
+
   const handleChange = useCallback(value => {
-    Date.parse(value) ? input.onChange(value.toISOString()) : input.onChange(null);
+    parseValue(value) ? input.onChange(parseValue(value)) : input.onChange(null);
   }, []);
+
+  const onBlur = () => input.onBlur(input.value ? parseValue(input.value) : null);
 
   return (
     <div className="picker">
@@ -41,7 +54,7 @@ const Picker = ({ PickerComponent, ...fieldProps }) => {
           className={className}
           value={input.value ? new Date(input.value) : null}
           onChange={date => handleChange(date)}
-          onBlur={() => input.onBlur(input.value ? new Date(input.value).toISOString() : null)}
+          onBlur={ onBlur }
         />
       </MuiPickersUtilsProvider>
     </div>
