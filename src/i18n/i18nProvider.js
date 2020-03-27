@@ -20,4 +20,11 @@ const getLocale = () => {
   return locale;
 }
 
-export default polyglotI18nProvider(locale => messages[locale], getLocale());
+export default polyglotI18nProvider(
+  locale => messages[locale],
+  getLocale(),
+  {
+    allowMissing: true,
+    onMissingKey: (key) => key.split('.')[key.split('.').length - 1]
+  }
+);
