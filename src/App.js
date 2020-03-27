@@ -4,9 +4,31 @@ import restProvider from './utils/apiProvider';
 
 import icons from './components/icons'
 
-import { CustomerList, EmployeeList, ExpeditionList, ChildList } from './Pages/List'
-import { EmployeeCreate, CustomerCreate, ChildCreate, ExpeditionCreate, PaymentCreate } from './Forms/Create'
-import { CustomerShow, EmployeeShow, ExpeditionShow, ChildShow } from './Forms/Show'
+import { 
+    CustomerList, 
+    EmployeeList, 
+    ExpeditionList, 
+    ChildList, 
+    DealList,
+    PaymentList
+} from './Pages/List'
+import {
+    EmployeeCreate,
+    CustomerCreate,
+    ChildCreate,
+    ExpeditionCreate,
+    PaymentCreate,
+    DealCreate
+} from './Forms/Create'
+
+import {
+    CustomerShow,
+    EmployeeShow,
+    ExpeditionShow,
+    ChildShow,
+    DealShow,
+    PaymentShow
+} from './Forms/Show'
 
 const dataProvider = restProvider(process.env.REACT_APP_API_PATH);
 
@@ -39,7 +61,10 @@ const App = () => (
     <Resource
       name="deals"
       icon={icons.deals}
-      list={ListGuesser}
+      list={DealList}
+      show={DealShow}
+      edit={EditGuesser}
+      create={DealCreate}
     />
     <Resource
       name="expeditions"
@@ -52,7 +77,10 @@ const App = () => (
     <Resource
       name="payments"
       icon={icons.payments}
-      list={ListGuesser}
+      list={PaymentList}
+      show={PaymentShow}
+      edit={EditGuesser}
+      create={PaymentCreate}
     />
   </Admin>
 );

@@ -7,31 +7,36 @@ import {
   TextField,
   ReferenceManyField,
   Datagrid,
+  DateField,
+  EmailField,
   ReferenceField,
-  FunctionField
+  FunctionField,
+  BooleanField
 } from 'react-admin';
 
-import ExpeditionIcon from '@material-ui/icons/Deck';
+
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 
 
-import AddRelatedButton from '../../components/AddRelatedButton';
 import ActionsColumn from '../../components/ActionsColumn';
-
 
 export default (props) => (
   <Show {...props}>
     <TabbedShowLayout>
-      <Tab label="Summary" icon={ <ExpeditionIcon/> }>
-        <TextField source="id" />
-        <TextField source="location" />
-        <TextField source="abbreviation" />
+      <Tab label="Payment" icon={<AttachMoneyIcon/>}>
+        <TextField source="id"/>
+        <TextField source="paidAt"/>
+        <ReferenceField source="dealId" reference="deals">
+          <TextField source="id" label="Deal"/>
+        </ReferenceField>
+        <TextField source="sum"/>
       </Tab>
-      <Tab label="Deals" icon={ <InsertDriveFileIcon />} path="deals">
+      <Tab label="Deal" icon={<InsertDriveFileIcon/>}>
         <ReferenceManyField
           addLabel={false}
+          source="dealId"
           reference="deals"
-          target="expeditionId"
         >
           <Datagrid>
             <ReferenceField source="expeditionId" reference="expeditions">
@@ -45,10 +50,10 @@ export default (props) => (
             <ReferenceField source="childId" reference="children">
               <FunctionField render={({lastName, firstName, patronymic}) => `${lastName} ${firstName} ${patronymic}`} />
             </ReferenceField>
+            <BooleanField source="sleepingBag"/>
             <ActionsColumn label="Actions" textAlign="right" />
           </Datagrid>
         </ReferenceManyField>
-        <AddRelatedButton path="deals" target="customerId"/>
       </Tab>
     </TabbedShowLayout>
   </Show>

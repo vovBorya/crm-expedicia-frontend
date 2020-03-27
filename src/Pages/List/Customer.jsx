@@ -1,5 +1,13 @@
 import React from 'react';
-import { List, Datagrid, TextField, EmailField, EditButton, DeleteButton, FunctionField } from 'react-admin';
+import { 
+  List, 
+  Datagrid, 
+  TextField, 
+  EmailField, 
+  EditButton, 
+  DeleteButton, 
+  FunctionField 
+} from 'react-admin';
 
 import ActionsColumn from '../../components/ActionsColumn'
 

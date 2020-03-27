@@ -1,5 +1,12 @@
 import React from 'react';
-import { Create, SimpleForm, TextInput, DateInput, ReferenceInput, AutocompleteInput } from 'react-admin';
+import { 
+  Create, 
+  SimpleForm, 
+  TextInput, 
+  DateInput, 
+  ReferenceInput, 
+  AutocompleteInput 
+} from 'react-admin';
 
 import { parse } from 'query-string';
 
