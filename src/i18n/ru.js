@@ -1,11 +1,20 @@
 export default {
   common: {
     actions: 'Действия',
-    addNew: 'Добавить еще'
+    addNew: 'Добавить еще',
+    themes: {
+      standard: 'Стандартная',
+      mint: 'Мята',
+      malibu: 'Малибу'
+    }
   },
   dashboard: {
-    settings: 'Настройки',
-    language: 'Язык'
+    settings: {
+      head: 'Настройки',
+      language: 'Язык',
+      theme: 'Тема',
+      darkmode: 'Тёмный'
+    },
   },
   resources: {
     customers: {

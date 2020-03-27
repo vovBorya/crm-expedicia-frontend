@@ -3,6 +3,8 @@ import { Admin, Resource, ListGuesser, EditGuesser } from 'react-admin';
 
 import restProvider from './utils/apiProvider';
 import i18nProvider from "./i18n/i18nProvider";
+import getTheme from './themes/themeProvider'
+
 
 import icons from './components/icons'
 
@@ -14,7 +16,7 @@ import { CustomerShow } from './Forms/Show'
 const dataProvider = restProvider(process.env.REACT_APP_API_PATH);
 
 const App = () => (
-  <Admin dashboard={ Dashboard } dataProvider={dataProvider} i18nProvider={i18nProvider} >
+  <Admin theme={ getTheme() }  dashboard={ Dashboard } dataProvider={dataProvider} i18nProvider={i18nProvider} >
     <Resource
       name="employees"
       icon={icons.employees}
