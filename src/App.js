@@ -1,6 +1,5 @@
 import React from 'react';
 import { Admin, Resource, ListGuesser, EditGuesser } from 'react-admin';
-import Button from '@material-ui/core/Button';
 
 import restProvider from './utils/apiProvider';
 import i18nProvider from "./i18n/i18nProvider";

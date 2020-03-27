@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslate, List, Datagrid, TextField, EmailField } from 'react-admin';
+import { useTranslate, List, Datagrid, TextField } from 'react-admin';
 
 import ActionsColumn from '../../components/ActionsColumn'
 
