@@ -1,9 +1,13 @@
 import React from 'react';
 import { Admin, Resource, ListGuesser, EditGuesser } from 'react-admin';
+import Button from '@material-ui/core/Button';
+
 import restProvider from './utils/apiProvider';
+import i18nProvider from "./i18n/i18nProvider";
 
 import icons from './components/icons'
 
+import Dashboard from "./Pages/Dashboard";
 import { CustomerList } from './Pages/List'
 import { CustomerCreate, ChildCreate } from './Forms/Create'
 import { CustomerShow } from './Forms/Show'
@@ -11,7 +15,7 @@ import { CustomerShow } from './Forms/Show'
 const dataProvider = restProvider(process.env.REACT_APP_API_PATH);
 
 const App = () => (
-  <Admin dataProvider={dataProvider}>
+  <Admin dashboard={ Dashboard } dataProvider={dataProvider} i18nProvider={i18nProvider} >
     <Resource
       name="employees"
       icon={icons.employees}
