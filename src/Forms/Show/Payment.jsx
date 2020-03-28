@@ -32,7 +32,7 @@ export default (props) => (
         </ReferenceField>
         <TextField source="sum"/>
       </Tab>
-      <Tab label="Deal" icon={<InsertDriveFileIcon/>}>
+      <Tab label="Deal" icon={<InsertDriveFileIcon/>} path="deals">
         <ReferenceManyField
           addLabel={false}
           source="dealId"

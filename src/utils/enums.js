@@ -1,8 +1,8 @@
 export const dealStatus = [
   {id: 'CREATED', name: 'Created'},
-  {id: 'PREPAID_EXPANSE', name: 'Prepaid_expanse'},
-  {id: 'PARTIAL_PAYMENT', name: 'Partial_payment'},
-  {id: 'FULLY_PAID', name: 'Fully_paid'},
+  {id: 'PREPAID_EXPANSE', name: 'Prepaid expanse'},
+  {id: 'PARTIAL_PAYMENT', name: 'Partial payment'},
+  {id: 'FULLY_PAID', name: 'Fully paid'},
   {id: 'COMPLETED', name: 'Completed'},
   {id: 'CANCELED', name: 'Canceled'}
 ]

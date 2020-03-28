@@ -8,7 +8,8 @@ import {
   EditButton,
   DeleteButton,
   FunctionField,
-  BooleanField
+  BooleanField,
+  ChipField
 } from 'react-admin';
 
 import ActionsColumn from '../../components/ActionsColumn';
@@ -19,7 +20,7 @@ export default (props) => (
       <TextField source="id"/>
       <TextField source="sum"/>
       <TextField source="status"/>
-      <ReferenceField source="employeeId" reference="employees">
+      <ReferenceField label="Author" source="employeeId" reference="employees">
         <FunctionField render={({lastName, firstName, patronymic}) =>
           `${lastName} ${firstName} ${patronymic}`}/>
       </ReferenceField>

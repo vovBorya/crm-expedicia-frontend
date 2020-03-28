@@ -73,7 +73,7 @@ export default (props) => (
             <ActionsColumn label="Actions" textAlign="right" />
           </Datagrid>
         </ReferenceManyField>
-        <AddRelatedButton path="deals" target="customerId"/>
+        <AddRelatedButton path="deals" target="childId"/>
       </Tab>
     </TabbedShowLayout>
   </Show>

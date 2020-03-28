@@ -2,33 +2,43 @@ import React from 'react';
 import { Admin, Resource, ListGuesser, ShowGuesser, EditGuesser } from 'react-admin';
 import restProvider from './utils/apiProvider';
 
-import icons from './components/icons'
-
-import { 
-    CustomerList, 
-    EmployeeList, 
-    ExpeditionList, 
-    ChildList, 
-    DealList,
-    PaymentList
-} from './Pages/List'
-import {
-    EmployeeCreate,
-    CustomerCreate,
-    ChildCreate,
-    ExpeditionCreate,
-    PaymentCreate,
-    DealCreate
-} from './Forms/Create'
+import icons from './components/icons';
 
 import {
-    CustomerShow,
-    EmployeeShow,
-    ExpeditionShow,
-    ChildShow,
-    DealShow,
-    PaymentShow
-} from './Forms/Show'
+  CustomerList,
+  EmployeeList,
+  ExpeditionList,
+  ChildList,
+  DealList,
+  PaymentList
+} from './Pages/List';
+
+import {
+  EmployeeCreate,
+  CustomerCreate,
+  ChildCreate,
+  ExpeditionCreate,
+  PaymentCreate,
+  DealCreate
+} from './Forms/Create';
+
+import {
+  CustomerShow,
+  EmployeeShow,
+  ExpeditionShow,
+  ChildShow,
+  DealShow,
+  PaymentShow
+} from './Forms/Show';
+
+import {
+  CustomerEdit,
+  ChildEdit,
+  EmployeeEdit,
+  ExpeditionEdit,
+  PaymentEdit,
+  DealEdit
+} from './Forms/Edit';
 
 const dataProvider = restProvider(process.env.REACT_APP_API_PATH);
 
@@ -39,7 +49,7 @@ const App = () => (
       icon={icons.employees}
       list={EmployeeList}
       show={EmployeeShow}
-      edit={EditGuesser}
+      edit={EmployeeEdit}
       create={EmployeeCreate}
     />
     <Resource
@@ -47,7 +57,7 @@ const App = () => (
       icon={icons.customers}
       list={CustomerList}
       show={CustomerShow}
-      edit={EditGuesser}
+      edit={CustomerEdit}
       create={CustomerCreate}
     />
     <Resource
@@ -55,7 +65,7 @@ const App = () => (
       icon={icons.children}
       list={ChildList}
       show={ChildShow}
-      edit={EditGuesser}
+      edit={ChildEdit}
       create={ChildCreate}
     />
     <Resource
@@ -63,7 +73,7 @@ const App = () => (
       icon={icons.deals}
       list={DealList}
       show={DealShow}
-      edit={EditGuesser}
+      edit={DealEdit}
       create={DealCreate}
     />
     <Resource
@@ -71,7 +81,7 @@ const App = () => (
       icon={icons.expeditions}
       list={ExpeditionList}
       show={ExpeditionShow}
-      edit={EditGuesser}
+      edit={ExpeditionEdit}
       create={ExpeditionCreate}
     />
     <Resource
@@ -79,7 +89,7 @@ const App = () => (
       icon={icons.payments}
       list={PaymentList}
       show={PaymentShow}
-      edit={EditGuesser}
+      edit={PaymentEdit}
       create={PaymentCreate}
     />
   </Admin>

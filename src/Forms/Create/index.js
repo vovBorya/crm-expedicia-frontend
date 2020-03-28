@@ -1,4 +1,4 @@
-import CustomerCreate from './Customers';
+import CustomerCreate from './Customer';
 import ChildCreate from './Child';
 import EmployeeCreate from './Employee';
 import ExpeditionCreate from './Expedition';

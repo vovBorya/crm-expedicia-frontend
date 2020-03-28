@@ -49,7 +49,7 @@ export default (props) => (
         </ReferenceField>
         <BooleanField source="sleepingBag"/>
       </Tab>
-      <Tab label="Employee" icon={<SupervisedUserCircleIcon/>}>
+      <Tab label="Employee" icon={<SupervisedUserCircleIcon/>} path="employees">
         <ReferenceManyField
           addLabel={false}
           source="employeeId"
@@ -68,7 +68,7 @@ export default (props) => (
           </Datagrid>
         </ReferenceManyField>
       </Tab>
-      <Tab label="Customer" icon={<CustomersIron/>}>
+      <Tab label="Customer" icon={<CustomersIron/>} path="customers">
         <ReferenceManyField
           addLabel={false}
           source="customerId"
@@ -83,7 +83,7 @@ export default (props) => (
           </Datagrid>
         </ReferenceManyField>
       </Tab>
-      <Tab label="Child" icon={<ChildCareIcon/>}>
+      <Tab label="Child" icon={<ChildCareIcon/>} path="children">
         <ReferenceManyField
           addLabel={false}
           source="childId"
@@ -98,19 +98,23 @@ export default (props) => (
           </Datagrid>
         </ReferenceManyField>
       </Tab>
-      <Tab label="Payments" icon={<AttachMoneyIcon/>}>
+      <Tab label="Payments" icon={<AttachMoneyIcon/>} path="payments">
         <ReferenceManyField
           addLabel={false}
-          resource="dealId"
+          target="dealId"
           reference="payments"
         >
           <Datagrid>
             <TextField source="id"/>
             <TextField source="paidAt"/>
             <TextField source="sum"/>
+            <ReferenceField source="dealId" reference="deals">
+              <FunctionField render={id => `${id}`}/>
+            </ReferenceField>
             <ActionsColumn label="Actions" textAlign="right"/>
           </Datagrid>
         </ReferenceManyField>
+        <AddRelatedButton path="payments" target="dealId"/>
       </Tab>
     </TabbedShowLayout>
   </Show>

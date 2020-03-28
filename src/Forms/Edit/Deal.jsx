@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Create,
+  Edit,
   SimpleForm,
   TextInput,
   NumberInput,
@@ -44,13 +44,13 @@ export default (props) => {
 
 
   return(
-    <Create {...props}>
+    <Edit {...props}>
       <SimpleForm redirect={[
         redirectExpedition,
         redirectEmployee,
         redirectCustomer,
         redirectChild]}
-          initialValues={{ expeditionId }}>
+                  initialValues={{ expeditionId }}>
         <NumberInput source="sum"/>
         <SelectInput source="status" choices={dealStatus}/>
 
@@ -101,6 +101,6 @@ export default (props) => {
         <BooleanInput source="sleepingBag"/>
         <TextInput source="comment"/>
       </SimpleForm>
-    </Create>
+    </Edit>
   )
 }
