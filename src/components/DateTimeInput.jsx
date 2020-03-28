@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback } from 'react';
 import { useInput, FieldTitle } from 'react-admin';
 import PropTypes from 'prop-types';
 import { DatePicker, TimePicker, DateTimePicker, MuiPickersUtilsProvider } from 'material-ui-pickers';
@@ -23,17 +23,17 @@ const Picker = ({ PickerComponent, ...fieldProps }) => {
 
   const { touched, error } = meta;
 
-  const parseValue = (v) => {
+  const parseValue = useCallback((v) => {
     let parseFunc;
     if (parse) parseFunc = parse;
     if (!parseFunc && valueFormat) parseFunc = (val) => format(val, valueFormat);
     if (!parseFunc) parseFunc = (val => new Date(val).toISOString())
     return parseFunc(v)
-  }
+  }, [parse, valueFormat])
 
   const handleChange = useCallback(value => {
     parseValue(value) ? input.onChange(parseValue(value)) : input.onChange(null);
-  }, []);
+  }, [input, parseValue]);
 
   const onBlur = () => input.onBlur(input.value ? parseValue(input.value) : null);
 

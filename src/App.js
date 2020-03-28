@@ -1,11 +1,13 @@
 import React from 'react';
 import { Admin, Resource } from 'react-admin';
+
 import restProvider from './utils/apiProvider';
 import i18nProvider from "./i18n/i18nProvider";
 import getTheme from './themes/themeProvider'
 
-
 import icons from './components/icons';
+
+import Dashboard from "./Pages/Dashboard";
 
 import {
   CustomerList,
