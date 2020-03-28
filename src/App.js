@@ -1,6 +1,9 @@
 import React from 'react';
 import { Admin, Resource } from 'react-admin';
 import restProvider from './utils/apiProvider';
+import i18nProvider from "./i18n/i18nProvider";
+import getTheme from './themes/themeProvider'
+
 
 import icons from './components/icons';
 
@@ -43,7 +46,7 @@ import {
 const dataProvider = restProvider(process.env.REACT_APP_API_PATH);
 
 const App = () => (
-  <Admin dataProvider={dataProvider}>
+  <Admin theme={ getTheme() }  dashboard={ Dashboard } dataProvider={dataProvider} i18nProvider={i18nProvider} >
     <Resource
       name="employees"
       icon={icons.employees}
