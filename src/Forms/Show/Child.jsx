@@ -8,7 +8,6 @@ import {
   ReferenceManyField,
   Datagrid,
   DateField,
-  EmailField,
   ReferenceField,
   FunctionField
 } from 'react-admin';
@@ -29,6 +28,7 @@ export default (props) => (
         <TextField source="lastName" />
         <TextField source="firstName" />
         <TextField source="patronymic" />
+        <DateField source="birthday"/>
         <ReferenceField source="parentId" reference="customers">
           <FunctionField render={({lastName,firstName, patronymic}) =>
             `${lastName} ${firstName} ${patronymic}`} />

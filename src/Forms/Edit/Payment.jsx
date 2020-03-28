@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Edit,
-  TextInput,
   TabbedForm,
   FormTab,
   NumberInput

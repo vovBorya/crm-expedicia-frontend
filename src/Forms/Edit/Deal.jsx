@@ -6,7 +6,6 @@ import {
   NumberInput,
   ReferenceInput,
   AutocompleteInput,
-  SelectField,
   BooleanInput,
   SelectInput
 } from 'react-admin';
@@ -14,13 +13,6 @@ import {
 import { parse } from 'query-string';
 
 import {dealStatus} from '../../utils/enums';
-
-import Select from '@material-ui/core/Select';
-import FormControl from '@material-ui/core/FormControl';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import Typography from '@material-ui/core/Typography';
-import Slider from '@material-ui/core/Slider';
 
 export default (props) => {
 
@@ -40,9 +32,6 @@ export default (props) => {
   const childId = paramChildId ? parseInt(paramChildId, 10): undefined;
   const redirectChild = childId ? `/childred/${childId}/show/deals`: 'list';
 
-  const valueText = (value) => `${dealStatus[value-1].name}`;
-
-
   return(
     <Edit {...props}>
       <SimpleForm redirect={[
@@ -53,27 +42,6 @@ export default (props) => {
                   initialValues={{ expeditionId }}>
         <NumberInput source="sum"/>
         <SelectInput source="status" choices={dealStatus}/>
-
-        {/*<TextInput source="status" id="select" value={dealStatus} select>
-          <MenuItem value={0}>Created</MenuItem>
-          <MenuItem value={1}>Prepaid expanse</MenuItem>
-          <MenuItem value={2}>Partial payment</MenuItem>
-          <MenuItem value={3}>Fully paid</MenuItem>
-          <MenuItem value={4}>Completed</MenuItem>
-          <MenuItem value={5}>Canceled</MenuItem>
-        </TextInput>*/}
-
-        {/*<Typography gutterBottom>Status</Typography>
-        <Slider
-          defaultValue={0}
-          valueLabelDisplay="on"
-          valueLabelFormat={valueText}
-          aria-labelledby="discrete-slider-restrict"
-          marks={dealStatus}
-          step={1}
-          min={1}
-          max={6}
-        />*/}
         <ReferenceInput source="employeeId" reference="employees">
           <AutocompleteInput optionText={ record => {
             if(!record) return undefined;

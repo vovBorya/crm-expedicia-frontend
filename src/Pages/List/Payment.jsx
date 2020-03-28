@@ -3,9 +3,7 @@ import {
   List,
   Datagrid,
   ReferenceField,
-  TextField,
-  EditButton,
-  DeleteButton
+  TextField
 } from 'react-admin';
 
 import ActionsColumn from '../../components/ActionsColumn';

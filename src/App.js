@@ -1,5 +1,5 @@
 import React from 'react';
-import { Admin, Resource, ListGuesser, ShowGuesser, EditGuesser } from 'react-admin';
+import { Admin, Resource } from 'react-admin';
 import restProvider from './utils/apiProvider';
 
 import icons from './components/icons';

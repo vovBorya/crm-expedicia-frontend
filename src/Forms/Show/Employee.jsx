@@ -12,8 +12,7 @@ import {
     FunctionField,
     EmailField,
     BooleanField,
-    SingleFieldList,
-    ChipField
+    SingleFieldList
 } from 'react-admin';
 
 import PersonIcon from '@material-ui/icons/Person';

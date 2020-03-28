@@ -3,10 +3,7 @@ import {
   List,
   Datagrid,
   TextField,
-  EmailField,
-  EditButton,
-  DeleteButton,
-  FunctionField
+  EmailField
 } from 'react-admin';
 
 import ActionsColumn from '../../components/ActionsColumn';

@@ -8,7 +8,6 @@ import {
   ReferenceManyField,
   Datagrid,
   DateField,
-  EmailField,
   ReferenceField,
   FunctionField,
   BooleanField
@@ -26,7 +25,7 @@ export default (props) => (
     <TabbedShowLayout>
       <Tab label="Payment" icon={<AttachMoneyIcon/>}>
         <TextField source="id"/>
-        <TextField source="paidAt"/>
+        <DateField source="paidAt"/>
         <ReferenceField source="dealId" reference="deals">
           <TextField source="id" label="Deal"/>
         </ReferenceField>

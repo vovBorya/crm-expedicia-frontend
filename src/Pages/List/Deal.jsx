@@ -5,11 +5,8 @@ import {
   Datagrid,
   ReferenceField,
   TextField,
-  EditButton,
-  DeleteButton,
   FunctionField,
-  BooleanField,
-  ChipField
+  BooleanField
 } from 'react-admin';
 
 import ActionsColumn from '../../components/ActionsColumn';

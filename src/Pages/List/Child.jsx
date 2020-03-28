@@ -4,9 +4,8 @@ import {
   Datagrid,
   ReferenceField,
   TextField,
-  EditButton,
-  DeleteButton,
-  FunctionField
+  FunctionField,
+  DateField
 } from 'react-admin';
 
 import ActionsColumn from '../../components/ActionsColumn';
@@ -18,6 +17,7 @@ export default props => (
       <TextField source="lastName" />
       <TextField source="firstName" />
       <TextField source="patronymic" />
+      <DateField source="birthday"/>
       <ReferenceField source="parentId" reference="customers">
         <FunctionField render={({lastName,
                                   firstName, patronymic}) => `${lastName} ${firstName} ${patronymic}`} />

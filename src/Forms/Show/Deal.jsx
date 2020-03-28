@@ -14,7 +14,6 @@ import {
   FunctionField
 } from 'react-admin';
 
-import PersonIcon from '@material-ui/icons/Person';
 import ChildCareIcon from '@material-ui/icons/ChildCare';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 import CustomersIron from '@material-ui/icons/ContactPhone';
