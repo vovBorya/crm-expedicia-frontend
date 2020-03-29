@@ -28,4 +28,4 @@ export default (props) => {
       </SimpleForm>
     </Create>
   );
-}
+};

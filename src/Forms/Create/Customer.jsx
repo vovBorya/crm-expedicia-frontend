@@ -7,7 +7,6 @@ export default (props) => (
       <TextInput source="lastName" />
       <TextInput source="firstName" />
       <TextInput source="patronymic" />
-      <TextInput source="email" />
     </SimpleForm>
   </Create>
 );

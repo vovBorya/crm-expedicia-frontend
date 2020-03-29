@@ -15,7 +15,8 @@ import {
   ExpeditionList,
   ChildList,
   DealList,
-  PaymentList
+  PaymentList,
+  CustomerContactList
 } from './Pages/List';
 
 import {
@@ -24,7 +25,8 @@ import {
   ChildCreate,
   ExpeditionCreate,
   PaymentCreate,
-  DealCreate
+  DealCreate,
+  CustomerContactCreate
 } from './Forms/Create';
 
 import {
@@ -33,7 +35,8 @@ import {
   ExpeditionShow,
   ChildShow,
   DealShow,
-  PaymentShow
+  PaymentShow,
+  CustomerContactShow
 } from './Forms/Show';
 
 import {
@@ -42,7 +45,8 @@ import {
   EmployeeEdit,
   ExpeditionEdit,
   PaymentEdit,
-  DealEdit
+  DealEdit,
+  CustomerContactEdit
 } from './Forms/Edit';
 
 const dataProvider = restProvider(process.env.REACT_APP_API_PATH);
@@ -96,6 +100,12 @@ const App = () => (
       show={PaymentShow}
       edit={PaymentEdit}
       create={PaymentCreate}
+    />
+    
+    <Resource
+      name="contacts"
+      icon={icons.contacts}
+      create={CustomerContactCreate}
     />
   </Admin>
 );

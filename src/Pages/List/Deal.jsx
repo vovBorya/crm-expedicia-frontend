@@ -17,17 +17,14 @@ export default (props) => (
       <TextField source="id"/>
       <TextField source="sum"/>
       <TextField source="status"/>
-      <ReferenceField label="Author" source="employeeId" reference="employees">
-        <FunctionField render={({lastName, firstName, patronymic}) =>
-          `${lastName} ${firstName} ${patronymic}`}/>
+      <ReferenceField label="Employee" source="employeeId" reference="employees">
+        <FunctionField render={({fullName}) => `${fullName}`} />
       </ReferenceField>
       <ReferenceField source="customerId" reference="customers">
-        <FunctionField render={({lastName, firstName, patronymic}) =>
-          `${lastName} ${firstName} ${patronymic}`}/>
+        <FunctionField render={({fullName}) => `${fullName}`} />
       </ReferenceField>
       <ReferenceField source="childId" reference="children">
-        <FunctionField render={({lastName, firstName, patronymic}) =>
-          `${lastName} ${firstName} ${patronymic}`}/>
+        <FunctionField render={({fullName}) => `${fullName}`} />
       </ReferenceField>
       <ReferenceField source="expeditionId" reference="expeditions">
         <FunctionField render={({location}) =>

@@ -31,16 +31,13 @@ export default (props) => (
         <TextField source="sum"/>
         <TextField source="status"/>
         <ReferenceField source="employeeId" reference="employees">
-          <FunctionField render={({lastName, firstName, patronymic}) =>
-            `${lastName} ${firstName} ${patronymic}`}/>
+          <FunctionField render={({fullName}) => `${fullName}`} />
         </ReferenceField>
         <ReferenceField source="customerId" reference="customers">
-          <FunctionField render={({lastName, firstName, patronymic}) =>
-            `${lastName} ${firstName} ${patronymic}`}/>
+          <FunctionField render={({fullName}) => `${fullName}`} />
         </ReferenceField>
         <ReferenceField source="childId" reference="children">
-          <FunctionField render={({lastName, firstName, patronymic}) =>
-            `${lastName} ${firstName} ${patronymic}`}/>
+          <FunctionField render={({fullName}) => `${fullName}`} />
         </ReferenceField>
         <ReferenceField source="expeditionId" reference="expeditions">
           <FunctionField render={({location}) =>
@@ -56,9 +53,7 @@ export default (props) => (
         >
           <Datagrid>
             <TextField source="id" />
-            <TextField source="lastName" />
-            <TextField source="firstName" />
-            <TextField source="patronymic" />
+            <TextField source="fullName" />
             <DateField source="birthday" />
             <TextField source="phone" />
             <TextField source="salary" />
@@ -75,9 +70,7 @@ export default (props) => (
         >
           <Datagrid>
             <TextField source="id" />
-            <TextField source="lastName" />
-            <TextField source="firstName" />
-            <TextField source="patronymic" />
+            <TextField source="fullName" />
             <ActionsColumn label="Actions" textAlign="right" />
           </Datagrid>
         </ReferenceManyField>
@@ -90,9 +83,7 @@ export default (props) => (
         >
           <Datagrid>
             <TextField source="id" />
-            <TextField source="lastName" />
-            <TextField source="firstName" />
-            <TextField source="patronymic" />
+            <TextField source="fullName" />
             <ActionsColumn label="Actions" textAlign="right" />
           </Datagrid>
         </ReferenceManyField>
@@ -108,7 +99,7 @@ export default (props) => (
             <TextField source="paidAt"/>
             <TextField source="sum"/>
             <ReferenceField source="dealId" reference="deals">
-              <FunctionField render={id => `${id}`}/>
+              <FunctionField render={({id}) => `${id}`}/>
             </ReferenceField>
             <ActionsColumn label="Actions" textAlign="right"/>
           </Datagrid>

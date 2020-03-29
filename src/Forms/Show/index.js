@@ -4,6 +4,7 @@ import ExpeditionShow from './Expedition.jsx';
 import ChildShow from './Child';
 import DealShow from './Deal';
 import PaymentShow from './Payment';
+import CustomerContactShow from './CustomerContact';
 
 export {
   CustomerShow,
@@ -11,5 +12,6 @@ export {
   ExpeditionShow,
   ChildShow,
   DealShow,
-  PaymentShow
+  PaymentShow,
+  CustomerContactShow
 }

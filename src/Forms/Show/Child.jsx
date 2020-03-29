@@ -9,7 +9,8 @@ import {
   Datagrid,
   DateField,
   ReferenceField,
-  FunctionField
+  FunctionField,
+  BooleanField
 } from 'react-admin';
 
 import PersonIcon from '@material-ui/icons/Person';
@@ -25,13 +26,10 @@ export default (props) => (
     <TabbedShowLayout>
       <Tab label="Child" icon={ <ChildCareIcon />}>
         <TextField source="id" />
-        <TextField source="lastName" />
-        <TextField source="firstName" />
-        <TextField source="patronymic" />
+        <TextField source="fullName" />
         <DateField source="birthday"/>
         <ReferenceField source="parentId" reference="customers">
-          <FunctionField render={({lastName,firstName, patronymic}) =>
-            `${lastName} ${firstName} ${patronymic}`} />
+          <FunctionField render={({fullName}) => `${fullName}`} />
         </ReferenceField>
       </Tab>
       <Tab label="Parent" icon={<PersonIcon/>} path="customers">
@@ -39,13 +37,10 @@ export default (props) => (
           addLabel={false}
           source="parentId"
           reference="customers"
-
         >
           <Datagrid>
             <TextField source="id" />
-            <TextField source="lastName" />
-            <TextField source="firstName" />
-            <TextField source="patronymic" />
+            <TextField source="fullName" />
             <ActionsColumn label="Actions" textAlign="right" />
           </Datagrid>
         </ReferenceManyField>
@@ -57,19 +52,22 @@ export default (props) => (
           target="childId"
         >
           <Datagrid>
+            <TextField source="id"/>
+            <TextField source="sum" />
+            <TextField source="status" />
+            <ReferenceField source="employeeId" reference="employees">
+              <FunctionField render={({fullName}) => `${fullName}`} />
+            </ReferenceField>
+            <ReferenceField source="customerId" reference="customers">
+              <FunctionField render={({fullName}) => `${fullName}`} />
+            </ReferenceField>
+            <ReferenceField source="childId" reference="children">
+              <FunctionField render={({fullName}) => `${fullName}`} />
+            </ReferenceField>
             <ReferenceField source="expeditionId" reference="expeditions">
               <TextField source="location" />
             </ReferenceField>
-            <TextField source="status" />
-            <TextField source="sum" />
-            <ReferenceField source="employeeId" reference="employees">
-              <FunctionField render={({lastName, firstName, patronymic}) =>
-                `${lastName} ${firstName} ${patronymic}`} />
-            </ReferenceField>
-            <ReferenceField source="childId" reference="children">
-              <FunctionField render={({lastName, firstName, patronymic}) =>
-                `${lastName} ${firstName} ${patronymic}`} />
-            </ReferenceField>
+            <BooleanField source="sleepingBag"/>
             <ActionsColumn label="Actions" textAlign="right" />
           </Datagrid>
         </ReferenceManyField>

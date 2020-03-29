@@ -4,6 +4,7 @@ import ExpeditionList from './Expedition';
 import ChildList from './Child';
 import DealList from './Deal';
 import PaymentList from './Payment';
+import CustomerContactList from './CustomerContact';
 
 export {
   CustomerList, 
@@ -11,5 +12,6 @@ export {
   ExpeditionList, 
   ChildList,
   DealList,
-  PaymentList
+  PaymentList,
+  CustomerContactList
 }

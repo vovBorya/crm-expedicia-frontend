@@ -28,9 +28,7 @@ export default (props) => (
     <TabbedShowLayout>
       <Tab label="Summary" icon={ <PersonIcon /> }>
         <TextField source="id" />
-        <TextField source="lastName" />
-        <TextField source="firstName" />
-        <TextField source="patronymic" />
+        <TextField source="fullName" />
         <DateField source="birthday" />
         <TextField source="phone" />
         <TextField source="salary" />
@@ -43,19 +41,23 @@ export default (props) => (
             target="employeeId"
           >
             <Datagrid>
-              <ReferenceField source="expeditionId" reference="expeditions">
-                <TextField source="location" />
-              </ReferenceField>
-              <TextField source="status" />
-              <TextField source="sum" />
-              <ReferenceField source="employeeId" reference="employees">
-                <FunctionField render={({lastName, firstName, patronymic}) => `${lastName} ${firstName} ${patronymic}`} />
-              </ReferenceField>
-              <ReferenceField source="childId" reference="children">
-                <FunctionField render={({lastName, firstName, patronymic}) => `${lastName} ${firstName} ${patronymic}`} />
-              </ReferenceField>
-              <BooleanField source="sleepingBag"/>
-              <ActionsColumn label="Actions" textAlign="right" />
+              <TextField source="id"/>
+                <TextField source="sum" />
+                <TextField source="status" />
+                <ReferenceField source="employeeId" reference="employees">
+                  <FunctionField render={({fullName}) => `${fullName}`} />
+                </ReferenceField>
+                <ReferenceField source="customerId" reference="customers">
+                  <FunctionField render={({fullName}) => `${fullName}`} />
+                </ReferenceField>
+                <ReferenceField source="childId" reference="children">
+                  <FunctionField render={({fullName}) => `${fullName}`} />
+                </ReferenceField>
+                <ReferenceField source="expeditionId" reference="expeditions">
+                  <TextField source="location" />
+                </ReferenceField>
+                <BooleanField source="sleepingBag"/>
+                <ActionsColumn label="Actions" textAlign="right" />
             </Datagrid>
           </ReferenceManyField>
           <AddRelatedButton path="deals" target="employeeId"/>
@@ -64,7 +66,7 @@ export default (props) => (
           <ReferenceManyField label="Customers" reference="deals" target="employeeId">
             <SingleFieldList>
               <ReferenceField label="Author" source="customerId" reference="customers">
-                <FunctionField render={({lastName, firstName, patronymic}) => <p>{`${lastName} ${firstName} ${patronymic}`}</p>} />
+                <FunctionField render={({fullName}) => `${fullName}`} />
               </ReferenceField>
             </SingleFieldList>
           </ReferenceManyField>

@@ -26,10 +26,7 @@ export default (props) => {
           <DateTimeInput source="paidAt" options={{ format: "yyyy-MM-dd'T'HH:mm"}} valueFormat="yyyy-MM-dd'T'HH:mm" />
           <NumberInput source="sum"/>
           <ReferenceInput source="dealId" reference="deals">
-            <AutocompleteInput optionText={ record => {
-              if(!record) return undefined;
-              return `${record.id}`
-            } } />
+            <AutocompleteInput optionText="id" />
           </ReferenceInput>
         </FormTab>
       </TabbedForm>

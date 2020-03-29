@@ -14,13 +14,10 @@ export default props => (
   <List {...props}>
     <Datagrid rowClick="show">
       <TextField source="id" />
-      <TextField source="lastName" />
-      <TextField source="firstName" />
-      <TextField source="patronymic" />
+      <TextField source="fullName" />
       <DateField source="birthday"/>
       <ReferenceField source="parentId" reference="customers">
-        <FunctionField render={({lastName,
-                                  firstName, patronymic}) => `${lastName} ${firstName} ${patronymic}`} />
+        <FunctionField render={({fullName}) => `${fullName}`} />
       </ReferenceField>
       <ActionsColumn label="Actions" textAlign="right"/>
     </Datagrid>

@@ -39,32 +39,20 @@ export default (props) => {
         redirectEmployee,
         redirectCustomer,
         redirectChild]}
-          initialValues={{ expeditionId }}>
+          initialValues={{ expeditionId, employeeId, customerId, childId }}>
         <NumberInput source="sum"/>
         <SelectInput source="status" choices={dealStatus}/>
         <ReferenceInput source="employeeId" reference="employees">
-          <AutocompleteInput optionText={ record => {
-            if(!record) return undefined;
-            return `${record.lastName} ${record.firstName} ${record.patronymic}`
-          }}/>
+          <AutocompleteInput optionText="fullName"/>
         </ReferenceInput>
         <ReferenceInput source="customerId" reference="customers">
-          <AutocompleteInput optionText={ record => {
-            if(!record) return undefined;
-            return `${record.lastName} ${record.firstName} ${record.patronymic}`
-          }}/>
+          <AutocompleteInput optionText="fullName"/>
         </ReferenceInput>
         <ReferenceInput source="childId" reference="children">
-          <AutocompleteInput optionText={ record => {
-            if(!record) return undefined;
-            return `${record.lastName} ${record.firstName} ${record.patronymic}`
-          }}/>
+          <AutocompleteInput optionText="fullName"/>
         </ReferenceInput>
         <ReferenceInput source="expeditionId" reference="expeditions">
-          <AutocompleteInput optionText={ record => {
-            if(!record) return undefined;
-            return `${record.location}`
-          }}/>
+          <AutocompleteInput optionText="location"/>
         </ReferenceInput>
         <BooleanInput source="sleepingBag"/>
         <TextInput source="comment"/>
