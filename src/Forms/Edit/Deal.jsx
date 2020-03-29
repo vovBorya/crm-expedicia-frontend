@@ -61,5 +61,5 @@ export default (props) => {
         <TextInput source="comment"/>
       </SimpleForm>
     </Edit>
-  )
-}
+  );
+};

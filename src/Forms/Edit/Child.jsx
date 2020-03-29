@@ -3,12 +3,13 @@ import {
   Edit,
   SimpleForm,
   TextInput,
-  DateInput,
   ReferenceInput,
   AutocompleteInput
 } from 'react-admin';
 
 import { parse } from 'query-string';
+
+import { DateInput } from "../../components/DateTimeInput";
 
 export default (props) => {
   const { parentId: paramParentId } = parse(props.location.search);
@@ -21,11 +22,11 @@ export default (props) => {
         <TextInput source="lastName" />
         <TextInput source="firstName" />
         <TextInput source="patronymic" />
-        <DateInput source="birthday" />
+        <DateInput source="birthday" options={{ format: "yyyy-MM-dd"}} valueFormat="yyyy-MM-dd"  />
         <ReferenceInput source="parentId" reference="customers">
           <AutocompleteInput optionText="fullName" />
         </ReferenceInput>
       </SimpleForm>
     </Edit>
   );
-}
+};

@@ -39,7 +39,7 @@ export default (props) => (
           <TextField source="fullName" />
         </ReferenceField>
         <ReferenceField source="expeditionId" reference="expeditions">
-          <TextField source="loaction" />
+          <TextField source="location" />
         </ReferenceField>
         <BooleanField source="sleepingBag"/>
       </Tab>
@@ -82,6 +82,9 @@ export default (props) => (
           <Datagrid>
             <TextField source="id" />
             <TextField source="fullName" />
+            <ReferenceField source="parentId" reference="customers">
+              <TextField source="fullName" />
+            </ReferenceField>
             <ActionsColumn label="Actions" textAlign="right" />
           </Datagrid>
         </ReferenceManyField>

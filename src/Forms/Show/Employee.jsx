@@ -38,22 +38,22 @@ export default (props) => (
         >
           <Datagrid>
             <TextField source="id"/>
-              <TextField source="sum" />
-              <TextField source="status" />
-              <ReferenceField source="employeeId" reference="employees">
-                <TextField source="fullName" />
-              </ReferenceField>
-              <ReferenceField source="customerId" reference="customers">
-                <TextField source="fullName" />
-              </ReferenceField>
-              <ReferenceField source="childId" reference="children">
-                <TextField source="fullName" />
-              </ReferenceField>
-              <ReferenceField source="expeditionId" reference="expeditions">
-                <TextField source="location" />
-              </ReferenceField>
-              <BooleanField source="sleepingBag"/>
-              <ActionsColumn label="Actions" textAlign="right" />
+            <TextField source="sum" />
+            <TextField source="status" />
+            <ReferenceField source="employeeId" reference="employees">
+              <TextField source="fullName" />
+            </ReferenceField>
+            <ReferenceField source="customerId" reference="customers">
+              <TextField source="fullName" />
+            </ReferenceField>
+            <ReferenceField source="childId" reference="children">
+              <TextField source="fullName" />
+            </ReferenceField>
+            <ReferenceField source="expeditionId" reference="expeditions">
+              <TextField source="location" />
+            </ReferenceField>
+            <BooleanField source="sleepingBag"/>
+            <ActionsColumn label="Actions" textAlign="right" />
           </Datagrid>
         </ReferenceManyField>
         <AddRelatedButton path="deals" target="employeeId"/>

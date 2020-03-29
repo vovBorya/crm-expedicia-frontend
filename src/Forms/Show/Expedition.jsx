@@ -7,7 +7,8 @@ import {
   TextField,
   ReferenceManyField,
   Datagrid,
-  ReferenceField
+  ReferenceField,
+  BooleanField
 } from 'react-admin';
 
 import ExpeditionIcon from '@material-ui/icons/Deck';
@@ -33,17 +34,22 @@ export default (props) => (
           target="expeditionId"
         >
           <Datagrid>
-            <ReferenceField source="expeditionId" reference="expeditions">
-              <TextField source="location" />
-            </ReferenceField>
-            <TextField source="status" />
-            <TextField source="sum" />
+            <TextField source="id"/>
+            <TextField source="sum"/>
+            <TextField source="status"/>
             <ReferenceField source="employeeId" reference="employees">
+              <TextField source="fullName" />
+            </ReferenceField>
+            <ReferenceField source="customerId" reference="customers">
               <TextField source="fullName" />
             </ReferenceField>
             <ReferenceField source="childId" reference="children">
               <TextField source="fullName" />
             </ReferenceField>
+            <ReferenceField source="expeditionId" reference="expeditions">
+              <TextField source="location" />
+            </ReferenceField>
+            <BooleanField source="sleepingBag"/>
             <ActionsColumn label="Actions" textAlign="right" />
           </Datagrid>
         </ReferenceManyField>

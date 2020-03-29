@@ -94,7 +94,6 @@ export default (props) => {
           </ReferenceManyField>
           <AddRelatedButton path="deals" target="customerId"/>
         </Tab>
-
       </TabbedShowLayout>
     </Show>
   );

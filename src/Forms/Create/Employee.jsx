@@ -10,7 +10,7 @@ import { DateInput } from "../../components/DateTimeInput";
 
 export default (props) => (
   <Create {...props}>
-    <SimpleForm>
+    <SimpleForm redirect="list">
       <TextInput source="lastName" />
       <TextInput source="firstName" />
       <TextInput source="patronymic" />
