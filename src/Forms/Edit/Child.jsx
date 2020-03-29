@@ -23,10 +23,7 @@ export default (props) => {
         <TextInput source="patronymic" />
         <DateInput source="birthday" />
         <ReferenceInput source="parentId" reference="customers">
-          <AutocompleteInput optionText={ record => {
-            if(!record) return undefined;
-            return `${record.lastName} ${record.firstName} ${record.patronymic}`
-          } } />
+          <AutocompleteInput optionText="fullName" />
         </ReferenceInput>
       </SimpleForm>
     </Edit>

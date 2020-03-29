@@ -10,8 +10,7 @@ import {
   DateField,
   EmailField,
   ReferenceField,
-  BooleanField,
-  FunctionField
+  BooleanField
 } from 'react-admin';
 
 import ChildCareIcon from '@material-ui/icons/ChildCare';
@@ -31,17 +30,16 @@ export default (props) => (
         <TextField source="sum"/>
         <TextField source="status"/>
         <ReferenceField source="employeeId" reference="employees">
-          <FunctionField render={({fullName}) => `${fullName}`} />
+          <TextField source="fullName" />
         </ReferenceField>
         <ReferenceField source="customerId" reference="customers">
-          <FunctionField render={({fullName}) => `${fullName}`} />
+          <TextField source="fullName" />
         </ReferenceField>
         <ReferenceField source="childId" reference="children">
-          <FunctionField render={({fullName}) => `${fullName}`} />
+          <TextField source="fullName" />
         </ReferenceField>
         <ReferenceField source="expeditionId" reference="expeditions">
-          <FunctionField render={({location}) =>
-            `${location}`}/>
+          <TextField source="loaction" />
         </ReferenceField>
         <BooleanField source="sleepingBag"/>
       </Tab>
@@ -98,9 +96,7 @@ export default (props) => (
             <TextField source="id"/>
             <TextField source="paidAt"/>
             <TextField source="sum"/>
-            <ReferenceField source="dealId" reference="deals">
-              <FunctionField render={({id}) => `${id}`}/>
-            </ReferenceField>
+            <TextField source="dealId" />
             <ActionsColumn label="Actions" textAlign="right"/>
           </Datagrid>
         </ReferenceManyField>

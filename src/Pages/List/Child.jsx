@@ -4,7 +4,6 @@ import {
   Datagrid,
   ReferenceField,
   TextField,
-  FunctionField,
   DateField
 } from 'react-admin';
 
@@ -17,7 +16,7 @@ export default props => (
       <TextField source="fullName" />
       <DateField source="birthday"/>
       <ReferenceField source="parentId" reference="customers">
-        <FunctionField render={({fullName}) => `${fullName}`} />
+        <TextField source="fullName" />
       </ReferenceField>
       <ActionsColumn label="Actions" textAlign="right"/>
     </Datagrid>

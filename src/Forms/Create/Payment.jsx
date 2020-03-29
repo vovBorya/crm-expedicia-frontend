@@ -20,7 +20,7 @@ export default (props) => {
   const redirect = dealId ? `/deal/${dealId}/show/payment` : 'list';
 
   return(
-    <Create {...props} redirect={redirect} >
+    <Create {...props} redirect={redirect} initialValues={{ dealId }}>
       <TabbedForm>
         <FormTab>
           <DateTimeInput source="paidAt" options={{ format: "yyyy-MM-dd'T'HH:mm"}} valueFormat="yyyy-MM-dd'T'HH:mm" />

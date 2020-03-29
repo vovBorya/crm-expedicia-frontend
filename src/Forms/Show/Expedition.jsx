@@ -7,8 +7,7 @@ import {
   TextField,
   ReferenceManyField,
   Datagrid,
-  ReferenceField,
-  FunctionField
+  ReferenceField
 } from 'react-admin';
 
 import ExpeditionIcon from '@material-ui/icons/Deck';
@@ -40,10 +39,10 @@ export default (props) => (
             <TextField source="status" />
             <TextField source="sum" />
             <ReferenceField source="employeeId" reference="employees">
-              <FunctionField render={({lastName, firstName, patronymic}) => `${lastName} ${firstName} ${patronymic}`} />
+              <TextField source="fullName" />
             </ReferenceField>
             <ReferenceField source="childId" reference="children">
-              <FunctionField render={({lastName, firstName, patronymic}) => `${lastName} ${firstName} ${patronymic}`} />
+              <TextField source="fullName" />
             </ReferenceField>
             <ActionsColumn label="Actions" textAlign="right" />
           </Datagrid>

@@ -3,8 +3,7 @@ import {
   List,
   Datagrid,
   ReferenceField,
-  TextField,
-  FunctionField
+  TextField
 } from 'react-admin';
 
 import ActionsColumn from '../../components/ActionsColumn';
@@ -16,7 +15,7 @@ export default (props) => (
       <TextField source="type"/>
       <TextField source="content"/>
       <ReferenceField source="customerId" reference="customers">
-        <FunctionField render={({fullName}) => `${fullName}`} />
+        <TextField source="fullName" />
       </ReferenceField>
       <ActionsColumn label="Actions" textAlign="right"/>
     </Datagrid>

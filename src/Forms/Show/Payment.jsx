@@ -9,7 +9,6 @@ import {
   Datagrid,
   DateField,
   ReferenceField,
-  FunctionField,
   BooleanField
 } from 'react-admin';
 
@@ -38,16 +37,20 @@ export default (props) => (
           reference="deals"
         >
           <Datagrid>
-            <ReferenceField source="expeditionId" reference="expeditions">
-              <TextField source="location" />
-            </ReferenceField>
-            <TextField source="status" />
-            <TextField source="sum" />
+            <TextField source="id"/>
+            <TextField source="sum"/>
+            <TextField source="status"/>
             <ReferenceField source="employeeId" reference="employees">
-              <FunctionField render={({lastName, firstName, patronymic}) => `${lastName} ${firstName} ${patronymic}`} />
+              <TextField source="fullName" />
+            </ReferenceField>
+            <ReferenceField source="customerId" reference="customers">
+              <TextField source="fullName" />
             </ReferenceField>
             <ReferenceField source="childId" reference="children">
-              <FunctionField render={({lastName, firstName, patronymic}) => `${lastName} ${firstName} ${patronymic}`} />
+              <TextField source="fullName" />
+            </ReferenceField>
+            <ReferenceField source="expeditionId" reference="expeditions">
+              <TextField source="location" />
             </ReferenceField>
             <BooleanField source="sleepingBag"/>
             <ActionsColumn label="Actions" textAlign="right" />

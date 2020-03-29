@@ -39,8 +39,10 @@ export default (props) => {
 
   return(
     <Create {...props}>
-      <SimpleForm redirect={redirect}
-          initialValues={{ expeditionId, employeeId, customerId, childId }}>
+      <SimpleForm
+        redirect={redirect}
+        initialValues={{ expeditionId, employeeId, customerId, childId }}
+      >
         <NumberInput source="sum"/>
         <SelectInput source="status" choices={dealStatus}/>
         <ReferenceInput source="employeeId" reference="employees">

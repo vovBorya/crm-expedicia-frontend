@@ -9,16 +9,12 @@ import {
     Datagrid,
     DateField,
     ReferenceField,
-    FunctionField,
     EmailField,
-    BooleanField,
-    SingleFieldList
+    BooleanField
 } from 'react-admin';
 
 import PersonIcon from '@material-ui/icons/Person';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
-import CustomersIron from '@material-ui/icons/ContactPhone';
-
 
 import AddRelatedButton from '../../components/AddRelatedButton';
 import ActionsColumn from '../../components/ActionsColumn';
@@ -34,43 +30,34 @@ export default (props) => (
         <TextField source="salary" />
         <EmailField source="email" />
       </Tab>
-        <Tab label="Deals" icon={ <InsertDriveFileIcon />} path="deals">
-          <ReferenceManyField
-            addLabel={false}
-            reference="deals"
-            target="employeeId"
-          >
-            <Datagrid>
-              <TextField source="id"/>
-                <TextField source="sum" />
-                <TextField source="status" />
-                <ReferenceField source="employeeId" reference="employees">
-                  <FunctionField render={({fullName}) => `${fullName}`} />
-                </ReferenceField>
-                <ReferenceField source="customerId" reference="customers">
-                  <FunctionField render={({fullName}) => `${fullName}`} />
-                </ReferenceField>
-                <ReferenceField source="childId" reference="children">
-                  <FunctionField render={({fullName}) => `${fullName}`} />
-                </ReferenceField>
-                <ReferenceField source="expeditionId" reference="expeditions">
-                  <TextField source="location" />
-                </ReferenceField>
-                <BooleanField source="sleepingBag"/>
-                <ActionsColumn label="Actions" textAlign="right" />
-            </Datagrid>
-          </ReferenceManyField>
-          <AddRelatedButton path="deals" target="employeeId"/>
-        </Tab>
-          <Tab label="Customers" icon={<CustomersIron/>} path="customers">
-          <ReferenceManyField label="Customers" reference="deals" target="employeeId">
-            <SingleFieldList>
-              <ReferenceField label="Author" source="customerId" reference="customers">
-                <FunctionField render={({fullName}) => `${fullName}`} />
+      <Tab label="Deals" icon={ <InsertDriveFileIcon />} path="deals">
+        <ReferenceManyField
+          addLabel={false}
+          reference="deals"
+          target="employeeId"
+        >
+          <Datagrid>
+            <TextField source="id"/>
+              <TextField source="sum" />
+              <TextField source="status" />
+              <ReferenceField source="employeeId" reference="employees">
+                <TextField source="fullName" />
               </ReferenceField>
-            </SingleFieldList>
-          </ReferenceManyField>
-          </Tab>
+              <ReferenceField source="customerId" reference="customers">
+                <TextField source="fullName" />
+              </ReferenceField>
+              <ReferenceField source="childId" reference="children">
+                <TextField source="fullName" />
+              </ReferenceField>
+              <ReferenceField source="expeditionId" reference="expeditions">
+                <TextField source="location" />
+              </ReferenceField>
+              <BooleanField source="sleepingBag"/>
+              <ActionsColumn label="Actions" textAlign="right" />
+          </Datagrid>
+        </ReferenceManyField>
+        <AddRelatedButton path="deals" target="employeeId"/>
+        </Tab>
       </TabbedShowLayout>
   </Show>
 )

@@ -5,8 +5,7 @@ import {
   TabbedShowLayout,
   Tab,
   TextField,
-  ReferenceField,
-  FunctionField
+  ReferenceField
 } from 'react-admin'
 
 import ContactsIcon from '@material-ui/icons/Contacts';
@@ -19,7 +18,7 @@ export default (props) => (
         <TextField source="type"/>
         <TextField source="content"/>
         <ReferenceField source="customerId" reference="customers">
-          <FunctionField render={({fullName}) => `${fullName}`}/>
+          <TextField source="fullName" />
         </ReferenceField>
       </Tab>
     </TabbedShowLayout>

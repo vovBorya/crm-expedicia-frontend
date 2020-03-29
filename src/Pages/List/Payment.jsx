@@ -10,7 +10,7 @@ import ActionsColumn from '../../components/ActionsColumn';
 
 export default (props) => (
   <List {...props}>
-    <Datagrid rowClicl="show">
+    <Datagrid rowClick="show">
       <TextField source="id"/>
       <TextField source="paidAt"/>
       <ReferenceField source="dealId" reference="deals">
