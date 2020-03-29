@@ -1,5 +1,5 @@
 import React from 'react';
-import { Admin, Resource } from 'react-admin';
+import { Admin, Resource} from 'react-admin';
 
 import restProvider from './utils/apiProvider';
 import i18nProvider from "./i18n/i18nProvider";
@@ -105,6 +105,9 @@ const App = () => (
     <Resource
       name="contacts"
       icon={icons.contacts}
+      list={CustomerContactList}
+      show={CustomerContactShow}
+      edit={CustomerContactEdit}
       create={CustomerContactCreate}
     />
   </Admin>

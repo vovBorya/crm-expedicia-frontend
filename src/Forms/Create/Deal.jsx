@@ -32,13 +32,14 @@ export default (props) => {
   const childId = paramChildId ? parseInt(paramChildId, 10): undefined;
   const redirectChild = childId ? `/childred/${childId}/show/deals`: 'list';
 
+  const redirect = (expeditionId && redirectExpedition) ||
+    (employeeId && redirectEmployee) ||
+    (customerId && redirectCustomer) ||
+    (childId &&  redirectChild)
+
   return(
     <Create {...props}>
-      <SimpleForm redirect={[
-        redirectExpedition,
-        redirectEmployee,
-        redirectCustomer,
-        redirectChild]}
+      <SimpleForm redirect={redirect}
           initialValues={{ expeditionId, employeeId, customerId, childId }}>
         <NumberInput source="sum"/>
         <SelectInput source="status" choices={dealStatus}/>

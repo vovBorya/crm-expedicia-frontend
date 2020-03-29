@@ -4,7 +4,7 @@ import {
   SimpleForm,
   TextInput,
   ReferenceInput,
-  SelectInput
+  SelectInput,
   AutocompleteInput
 } from 'react-admin';
 
@@ -15,7 +15,7 @@ import {contactType} from '../../utils/enums';
 export default (props) => {
   const {customerId: paramCustomerId} = parse(props.location.search);
   const customerId = paramCustomerId ? parseInt(paramCustomerId, 10) : undefined;
-  const redirect = customerId ? `/customers/${customerId}/show/contacts`
+  const redirect = customerId ? `/customers/${customerId}/show/contacts`: 'list';
 
   return(
     <Create {...props}>
