@@ -1,10 +1,10 @@
 import React from 'react';
-import { 
-  Create, 
-  SimpleForm, 
+import {
+  Edit,
+  SimpleForm,
   TextInput,
-  ReferenceInput, 
-  AutocompleteInput 
+  ReferenceInput,
+  AutocompleteInput
 } from 'react-admin';
 
 import { parse } from 'query-string';
@@ -17,7 +17,7 @@ export default (props) => {
   const redirect = parentId ? `/customers/${parentId}/show/children` : 'list';
 
   return (
-    <Create {...props}>
+    <Edit {...props}>
       <SimpleForm redirect={redirect} initialValues={{ parentId }}>
         <TextInput source="lastName" />
         <TextInput source="firstName" />
@@ -27,6 +27,6 @@ export default (props) => {
           <AutocompleteInput optionText="fullName" />
         </ReferenceInput>
       </SimpleForm>
-    </Create>
+    </Edit>
   );
 };

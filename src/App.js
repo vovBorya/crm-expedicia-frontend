@@ -1,17 +1,53 @@
 import React from 'react';
-import { Admin, Resource, ListGuesser, EditGuesser } from 'react-admin';
+import { Admin, Resource} from 'react-admin';
 
 import restProvider from './utils/apiProvider';
 import i18nProvider from "./i18n/i18nProvider";
 import getTheme from './themes/themeProvider'
 
-
-import icons from './components/icons'
+import icons from './components/icons';
 
 import Dashboard from "./Pages/Dashboard";
-import { CustomerList } from './Pages/List'
-import { CustomerCreate, ChildCreate } from './Forms/Create'
-import { CustomerShow } from './Forms/Show'
+
+import {
+  CustomerList,
+  EmployeeList,
+  ExpeditionList,
+  ChildList,
+  DealList,
+  PaymentList,
+  CustomerContactList
+} from './Pages/List';
+
+import {
+  EmployeeCreate,
+  CustomerCreate,
+  ChildCreate,
+  ExpeditionCreate,
+  PaymentCreate,
+  DealCreate,
+  CustomerContactCreate
+} from './Forms/Create';
+
+import {
+  CustomerShow,
+  EmployeeShow,
+  ExpeditionShow,
+  ChildShow,
+  DealShow,
+  PaymentShow,
+  CustomerContactShow
+} from './Forms/Show';
+
+import {
+  CustomerEdit,
+  ChildEdit,
+  EmployeeEdit,
+  ExpeditionEdit,
+  PaymentEdit,
+  DealEdit,
+  CustomerContactEdit
+} from './Forms/Edit';
 
 const dataProvider = restProvider(process.env.REACT_APP_API_PATH);
 
@@ -20,37 +56,59 @@ const App = () => (
     <Resource
       name="employees"
       icon={icons.employees}
-      list={ListGuesser}
+      list={EmployeeList}
+      show={EmployeeShow}
+      edit={EmployeeEdit}
+      create={EmployeeCreate}
     />
     <Resource
       name="customers"
       icon={icons.customers}
       list={CustomerList}
       show={CustomerShow}
-      edit={EditGuesser}
+      edit={CustomerEdit}
       create={CustomerCreate}
     />
     <Resource
       name="children"
       icon={icons.children}
-      list={ListGuesser}
+      list={ChildList}
+      show={ChildShow}
+      edit={ChildEdit}
       create={ChildCreate}
-      edit={EditGuesser}
     />
     <Resource
       name="deals"
       icon={icons.deals}
-      list={ListGuesser}
+      list={DealList}
+      show={DealShow}
+      edit={DealEdit}
+      create={DealCreate}
     />
     <Resource
       name="expeditions"
       icon={icons.expeditions}
-      list={ListGuesser}
+      list={ExpeditionList}
+      show={ExpeditionShow}
+      edit={ExpeditionEdit}
+      create={ExpeditionCreate}
     />
     <Resource
       name="payments"
       icon={icons.payments}
-      list={ListGuesser}
+      list={PaymentList}
+      show={PaymentShow}
+      edit={PaymentEdit}
+      create={PaymentCreate}
+    />
+    
+    <Resource
+      name="contacts"
+      icon={icons.contacts}
+      list={CustomerContactList}
+      show={CustomerContactShow}
+      edit={CustomerContactEdit}
+      create={CustomerContactCreate}
     />
   </Admin>
 );

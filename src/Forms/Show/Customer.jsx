@@ -9,7 +9,8 @@ import {
   Datagrid,
   DateField,
   ReferenceField,
-  FunctionField, useTranslate
+  useTranslate,
+  BooleanField
 } from 'react-admin';
 
 import PersonIcon from '@material-ui/icons/Person';
@@ -19,7 +20,7 @@ import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 
 
 import AddRelatedButton from '../../components/AddRelatedButton';
-import ActionsColumn from '../../components/ActionsColumn'
+import ActionsColumn from '../../components/ActionsColumn';
 
 const translatePath = 'resources.customers.forms.show';
 
@@ -31,9 +32,7 @@ export default (props) => {
       <TabbedShowLayout>
         <Tab label={ translate(`${translatePath}.summaryTab`) } icon={ <PersonIcon /> }>
           <TextField source="id" />
-          <TextField source="lastName" />
-          <TextField source="firstName" />
-          <TextField source="patronymic" />
+          <TextField source="fullName" />
         </Tab>
         <Tab label={ translate(`${translatePath}.contactsTab`) } icon={ <ContactsIcon />} path="contacts">
           <ReferenceManyField
@@ -44,6 +43,7 @@ export default (props) => {
             <Datagrid>
               <TextField source="type" />
               <TextField source="content" />
+              <TextField source="customerId" />
               <ActionsColumn label="Actions" textAlign="right"/>
             </Datagrid>
           </ReferenceManyField>
@@ -56,13 +56,10 @@ export default (props) => {
             target="parentId"
           >
             <Datagrid>
-              <TextField source="lastName" />
-              <TextField source="firstName" />
-              <TextField source="patronymic" />
+              <TextField source="fullName" />
               <DateField source="birthday" />
               <ReferenceField source="parentId" reference="customers">
-                <FunctionField render={({lastName,
-                                          firstName, patronymic}) => `${lastName} ${firstName} ${patronymic}`} />
+                <TextField source="fullName" />
               </ReferenceField>
               <ActionsColumn label="Actions" textAlign="right" />
             </Datagrid>
@@ -76,23 +73,27 @@ export default (props) => {
             target="customerId"
           >
             <Datagrid>
+              <TextField source="id"/>
+              <TextField source="sum" />
+              <TextField source="status" />
+              <ReferenceField source="employeeId" reference="employees">
+                <TextField source="fullName" />
+              </ReferenceField>
+              <ReferenceField source="customerId" reference="customers">
+                <TextField source="fullName" />
+              </ReferenceField>
+              <ReferenceField source="childId" reference="children">
+                <TextField source="fullName" />
+              </ReferenceField>
               <ReferenceField source="expeditionId" reference="expeditions">
                 <TextField source="location" />
               </ReferenceField>
-              <TextField source="status" />
-              <TextField source="sum" />
-              <ReferenceField source="employeeId" reference="employees">
-                <FunctionField render={({lastName, firstName, patronymic}) => `${lastName} ${firstName} ${patronymic}`} />
-              </ReferenceField>
-              <ReferenceField source="childId" reference="children">
-                <FunctionField render={({lastName, firstName, patronymic}) => `${lastName} ${firstName} ${patronymic}`} />
-              </ReferenceField>
+              <BooleanField source="sleepingBag"/>
               <ActionsColumn label="Actions" textAlign="right" />
             </Datagrid>
           </ReferenceManyField>
           <AddRelatedButton path="deals" target="customerId"/>
         </Tab>
-
       </TabbedShowLayout>
     </Show>
   );

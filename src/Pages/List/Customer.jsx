@@ -1,5 +1,10 @@
 import React from 'react';
-import { useTranslate, List, Datagrid, TextField } from 'react-admin';
+import { 
+  useTranslate,
+  List, 
+  Datagrid, 
+  TextField
+} from 'react-admin';
 
 import ActionsColumn from '../../components/ActionsColumn'
 
@@ -10,9 +15,7 @@ export default props => {
     <List {...props}>
       <Datagrid rowClick="show">
         <TextField source="id" />
-        <TextField source="lastName" />
-        <TextField source="firstName" />
-        <TextField source="patronymic" />
+        <TextField source="fullName" />
         <ActionsColumn label={ translate('common.actions') } textAlign="right"/>
       </Datagrid>
     </List>

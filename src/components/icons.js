@@ -4,6 +4,7 @@ import ContactPhoneIcon from '@material-ui/icons/ContactPhone';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
 import DeckIcon from '@material-ui/icons/Deck';
+import ContactsIcon from '@material-ui/icons/Contacts';
 
 export default {
   payments: AttachMoneyIcon,
@@ -12,4 +13,5 @@ export default {
   expeditions: DeckIcon,
   deals: InsertDriveFileIcon,
   employees: SupervisedUserCircleIcon,
+  contacts: ContactsIcon
 }
