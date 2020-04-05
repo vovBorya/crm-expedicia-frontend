@@ -15,7 +15,11 @@ export default props => (
       <TextField source="id" />
       <TextField source="fullName" />
       <DateField source="birthday"/>
-      <ReferenceField source="parentId" reference="customers">
+      <ReferenceField
+        source="parentId"
+        reference="customers"
+        link="show"
+      >
         <TextField source="fullName" />
       </ReferenceField>
       <ActionsColumn label="Actions" textAlign="right"/>

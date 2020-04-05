@@ -43,7 +43,7 @@ export default (props) => {
             <Datagrid>
               <TextField source="type" />
               <TextField source="content" />
-              <TextField source="customerId" />
+              <TextField source="customerId" link="show"/>
               <ActionsColumn label="Actions" textAlign="right"/>
             </Datagrid>
           </ReferenceManyField>
@@ -55,10 +55,10 @@ export default (props) => {
             reference="children"
             target="parentId"
           >
-            <Datagrid>
+            <Datagrid rowClick="show">
               <TextField source="fullName" />
               <DateField source="birthday" />
-              <ReferenceField source="parentId" reference="customers">
+              <ReferenceField source="parentId" reference="customers" link="show">
                 <TextField source="fullName" />
               </ReferenceField>
               <ActionsColumn label="Actions" textAlign="right" />
@@ -72,20 +72,20 @@ export default (props) => {
             reference="deals"
             target="customerId"
           >
-            <Datagrid>
+            <Datagrid rowClick="show">
               <TextField source="id"/>
               <TextField source="sum" />
               <TextField source="status" />
-              <ReferenceField source="employeeId" reference="employees">
+              <ReferenceField source="employeeId" reference="employees" link="show">
                 <TextField source="fullName" />
               </ReferenceField>
-              <ReferenceField source="customerId" reference="customers">
+              <ReferenceField source="customerId" reference="customers" link="show">
                 <TextField source="fullName" />
               </ReferenceField>
-              <ReferenceField source="childId" reference="children">
+              <ReferenceField source="childId" reference="children" link="show">
                 <TextField source="fullName" />
               </ReferenceField>
-              <ReferenceField source="expeditionId" reference="expeditions">
+              <ReferenceField source="expeditionId" reference="expeditions" link="show">
                 <TextField source="location" />
               </ReferenceField>
               <BooleanField source="sleepingBag"/>
