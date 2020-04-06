@@ -29,16 +29,16 @@ export default (props) => (
         <TextField source="id"/>
         <TextField source="sum"/>
         <TextField source="status"/>
-        <ReferenceField source="employeeId" reference="employees">
+        <ReferenceField source="employeeId" reference="employees" link="show">
           <TextField source="fullName" />
         </ReferenceField>
-        <ReferenceField source="customerId" reference="customers">
+        <ReferenceField source="customerId" reference="customers" link="show">
           <TextField source="fullName" />
         </ReferenceField>
-        <ReferenceField source="childId" reference="children">
+        <ReferenceField source="childId" reference="children" link="show">
           <TextField source="fullName" />
         </ReferenceField>
-        <ReferenceField source="expeditionId" reference="expeditions">
+        <ReferenceField source="expeditionId" reference="expeditions" link="show">
           <TextField source="location" />
         </ReferenceField>
         <BooleanField source="sleepingBag"/>
@@ -49,7 +49,7 @@ export default (props) => (
           source="employeeId"
           reference="employees"
         >
-          <Datagrid>
+          <Datagrid rowClick="show">
             <TextField source="id" />
             <TextField source="fullName" />
             <DateField source="birthday" />
@@ -66,7 +66,7 @@ export default (props) => (
           source="customerId"
           reference="customers"
         >
-          <Datagrid>
+          <Datagrid rowClick="show">
             <TextField source="id" />
             <TextField source="fullName" />
             <ActionsColumn label="Actions" textAlign="right" />
@@ -79,10 +79,10 @@ export default (props) => (
           source="childId"
           reference="children"
         >
-          <Datagrid>
+          <Datagrid rowClick="show">
             <TextField source="id" />
             <TextField source="fullName" />
-            <ReferenceField source="parentId" reference="customers">
+            <ReferenceField source="parentId" reference="customers" link="show">
               <TextField source="fullName" />
             </ReferenceField>
             <ActionsColumn label="Actions" textAlign="right" />
@@ -95,11 +95,11 @@ export default (props) => (
           target="dealId"
           reference="payments"
         >
-          <Datagrid>
+          <Datagrid rowClick="show">
             <TextField source="id"/>
             <TextField source="paidAt"/>
             <TextField source="sum"/>
-            <TextField source="dealId" />
+            <TextField source="dealId" link="show"/>
             <ActionsColumn label="Actions" textAlign="right"/>
           </Datagrid>
         </ReferenceManyField>

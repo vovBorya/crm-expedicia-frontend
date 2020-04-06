@@ -16,16 +16,16 @@ export default (props) => (
       <TextField source="id"/>
       <TextField source="sum"/>
       <TextField source="status"/>
-      <ReferenceField label="Employee" source="employeeId" reference="employees">
+      <ReferenceField label="Employee" source="employeeId" reference="employees" link="show">
         <TextField source="fullName" />
       </ReferenceField>
-      <ReferenceField source="customerId" reference="customers">
+      <ReferenceField label="Customer" source="customerId" reference="customers" link="show">
         <TextField source="fullName" />
       </ReferenceField>
-      <ReferenceField source="childId" reference="children">
+      <ReferenceField label="Child" source="childId" reference="children" link="show">
         <TextField source="fullName" />
       </ReferenceField>
-      <ReferenceField source="expeditionId" reference="expeditions">
+      <ReferenceField label="Location" source="expeditionId" reference="expeditions" link="show">
         <TextField source="location" />
       </ReferenceField>
       <BooleanField source="sleepingBag"/>

@@ -13,7 +13,7 @@ export default (props) => (
     <Datagrid rowClick="show">
       <TextField source="id"/>
       <TextField source="paidAt"/>
-      <ReferenceField source="dealId" reference="deals">
+      <ReferenceField source="dealId" reference="deals" link="show">
         <TextField source="id" label="Deal"/>
       </ReferenceField>
       <TextField source="sum"/>

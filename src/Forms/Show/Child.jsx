@@ -27,7 +27,7 @@ export default (props) => (
         <TextField source="id" />
         <TextField source="fullName" />
         <DateField source="birthday"/>
-        <ReferenceField source="parentId" reference="customers">
+        <ReferenceField source="parentId" reference="customers" link="show">
           <TextField source="fullName" />
         </ReferenceField>
       </Tab>
@@ -37,7 +37,7 @@ export default (props) => (
           source="parentId"
           reference="customers"
         >
-          <Datagrid>
+          <Datagrid rowClick="show">
             <TextField source="id" />
             <TextField source="fullName" />
             <ActionsColumn label="Actions" textAlign="right" />
@@ -50,20 +50,20 @@ export default (props) => (
           reference="deals"
           target="childId"
         >
-          <Datagrid>
+          <Datagrid rowClick="show">
             <TextField source="id"/>
             <TextField source="sum" />
             <TextField source="status" />
-            <ReferenceField source="employeeId" reference="employees">
+            <ReferenceField source="employeeId" reference="employees" link="show">
               <TextField source="fullName" />
             </ReferenceField>
-            <ReferenceField source="customerId" reference="customers">
+            <ReferenceField source="customerId" reference="customers" link="show">
               <TextField source="fullName" />
             </ReferenceField>
-            <ReferenceField source="childId" reference="children">
+            <ReferenceField source="childId" reference="children" link="show">
               <TextField source="fullName" />
             </ReferenceField>
-            <ReferenceField source="expeditionId" reference="expeditions">
+            <ReferenceField source="expeditionId" reference="expeditions" link="show">
               <TextField source="location" />
             </ReferenceField>
             <BooleanField source="sleepingBag"/>
