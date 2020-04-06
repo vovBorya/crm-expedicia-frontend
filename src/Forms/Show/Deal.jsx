@@ -7,16 +7,11 @@ import {
   TextField,
   ReferenceManyField,
   Datagrid,
-  DateField,
-  EmailField,
   ReferenceField,
   BooleanField
 } from 'react-admin';
 
-import ChildCareIcon from '@material-ui/icons/ChildCare';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
-import CustomersIron from '@material-ui/icons/ContactPhone';
-import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
 
 import AddRelatedButton from '../../components/AddRelatedButton';
@@ -43,63 +38,19 @@ export default (props) => (
         </ReferenceField>
         <BooleanField source="sleepingBag"/>
       </Tab>
-      <Tab label="Employee" icon={<SupervisedUserCircleIcon/>} path="employees">
-        <ReferenceManyField
-          addLabel={false}
-          source="employeeId"
-          reference="employees"
-        >
-          <Datagrid rowClick="show">
-            <TextField source="id" />
-            <TextField source="fullName" />
-            <DateField source="birthday" />
-            <TextField source="phone" />
-            <TextField source="salary" />
-            <EmailField source="email" />
-            <ActionsColumn label="Actions" textAlign="right" />
-          </Datagrid>
-        </ReferenceManyField>
-      </Tab>
-      <Tab label="Customer" icon={<CustomersIron/>} path="customers">
-        <ReferenceManyField
-          addLabel={false}
-          source="customerId"
-          reference="customers"
-        >
-          <Datagrid rowClick="show">
-            <TextField source="id" />
-            <TextField source="fullName" />
-            <ActionsColumn label="Actions" textAlign="right" />
-          </Datagrid>
-        </ReferenceManyField>
-      </Tab>
-      <Tab label="Child" icon={<ChildCareIcon/>} path="children">
-        <ReferenceManyField
-          addLabel={false}
-          source="childId"
-          reference="children"
-        >
-          <Datagrid rowClick="show">
-            <TextField source="id" />
-            <TextField source="fullName" />
-            <ReferenceField source="parentId" reference="customers" link="show">
-              <TextField source="fullName" />
-            </ReferenceField>
-            <ActionsColumn label="Actions" textAlign="right" />
-          </Datagrid>
-        </ReferenceManyField>
-      </Tab>
       <Tab label="Payments" icon={<AttachMoneyIcon/>} path="payments">
         <ReferenceManyField
           addLabel={false}
-          target="dealId"
           reference="payments"
+          target="dealId"
         >
           <Datagrid rowClick="show">
             <TextField source="id"/>
             <TextField source="paidAt"/>
             <TextField source="sum"/>
-            <TextField source="dealId" link="show"/>
+            <ReferenceField source="dealId" reference="deals" link="show">
+              <TextField source="id" label="Deal"/>
+            </ReferenceField>
             <ActionsColumn label="Actions" textAlign="right"/>
           </Datagrid>
         </ReferenceManyField>

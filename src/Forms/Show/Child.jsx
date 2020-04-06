@@ -12,7 +12,6 @@ import {
   BooleanField
 } from 'react-admin';
 
-import PersonIcon from '@material-ui/icons/Person';
 import ChildCareIcon from '@material-ui/icons/ChildCare';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 
@@ -30,19 +29,6 @@ export default (props) => (
         <ReferenceField source="parentId" reference="customers" link="show">
           <TextField source="fullName" />
         </ReferenceField>
-      </Tab>
-      <Tab label="Parent" icon={<PersonIcon/>} path="customers">
-        <ReferenceManyField
-          addLabel={false}
-          source="parentId"
-          reference="customers"
-        >
-          <Datagrid rowClick="show">
-            <TextField source="id" />
-            <TextField source="fullName" />
-            <ActionsColumn label="Actions" textAlign="right" />
-          </Datagrid>
-        </ReferenceManyField>
       </Tab>
       <Tab label="Deals" icon={ <InsertDriveFileIcon />} path="deals">
         <ReferenceManyField

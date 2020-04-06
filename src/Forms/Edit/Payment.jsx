@@ -3,7 +3,9 @@ import {
   Edit,
   TabbedForm,
   FormTab,
-  NumberInput
+  NumberInput,
+  ReferenceInput,
+  SelectInput
 } from 'react-admin'
 import { DateTimeInput } from '../../components/DateTimeInput';
 
@@ -12,8 +14,10 @@ export default (props) => (
     <TabbedForm>
       <FormTab>
         <DateTimeInput source="paidAt" options={{ format: "yyyy-MM-dd'T'HH:mm"}} valueFormat="yyyy-MM-dd'T'HH:mm" />
-        <NumberInput source="dealId"/>
         <NumberInput source="sum"/>
+        <ReferenceInput source="dealId" reference="deals" allowEmpty>
+          <SelectInput optionText="id" />
+        </ReferenceInput>
       </FormTab>
     </TabbedForm>
   </Edit>
