@@ -25,6 +25,6 @@ export default polyglotI18nProvider(
   getLocale(),
   {
     allowMissing: true,
-    onMissingKey: (key) => key.split('.')[key.split('.').length - 1]
+    onMissingKey: (key) => key && key.split('.')[key.split('.').length - 1]
   }
 );
