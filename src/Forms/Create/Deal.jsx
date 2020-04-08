@@ -44,7 +44,7 @@ export default (props) => {
         initialValues={{ expeditionId, employeeId, customerId, childId }}
       >
         <NumberInput source="sum"/>
-        <SelectInput source="status" choices={dealStatus}/>
+        <SelectInput source="status" choices={dealStatus} defaultValue={"CREATED"}/>
         <ReferenceInput source="employeeId" reference="employees">
           <AutocompleteInput optionText="fullName"/>
         </ReferenceInput>
