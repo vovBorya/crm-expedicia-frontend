@@ -6,10 +6,11 @@ import {
   TextField
 } from 'react-admin';
 
-import ActionsColumn from '../../components/ActionsColumn';
+import ActionsColumn from '../../../components/ActionsColumn';
+import Filter from './Filter';
 
-export default (props) => (
-  <List {...props}>
+export default props => (
+  <List {...props} filters={ <Filter /> }>
     <Datagrid rowClick="show">
       <TextField source="id"/>
       <TextField source="type"/>

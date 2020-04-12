@@ -1,5 +1,5 @@
 import CustomerList from './Customer';
-import EmployeeList from './Employee.jsx';
+import EmployeeList from './Employee';
 import ExpeditionList from './Expedition';
 import ChildList from './Child';
 import DealList from './Deal';

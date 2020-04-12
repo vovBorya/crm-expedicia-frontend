@@ -19,8 +19,10 @@ import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 import AddRelatedButton from '../../components/AddRelatedButton';
 import ActionsColumn from '../../components/ActionsColumn';
 
+import EmployeeName from '../../components/ShowTitle';
+
 export default (props) => (
-  <Show {...props}>
+  <Show title={<EmployeeName />} {...props}>
     <TabbedShowLayout>
       <Tab label="Summary" icon={ <PersonIcon /> }>
         <TextField source="id" />

@@ -6,7 +6,7 @@ import {
   TextField
 } from 'react-admin';
 
-import ActionsColumn from '../../components/ActionsColumn';
+import ActionsColumn from '../../../components/ActionsColumn';
 
 export default (props) => (
   <List {...props}>
@@ -20,4 +20,4 @@ export default (props) => (
       <ActionsColumn label="Actions" textAlign="right"/>
     </Datagrid>
   </List>
-)
+);

@@ -27,4 +27,4 @@ export default props => (
       <ActionsColumn label="Actions" textAlign="right"/>
     </Datagrid>
   </List>
-)
+);

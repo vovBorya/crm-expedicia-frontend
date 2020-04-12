@@ -22,13 +22,15 @@ import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 import AddRelatedButton from '../../components/AddRelatedButton';
 import ActionsColumn from '../../components/ActionsColumn';
 
+import CustomerName from '../../components/ShowTitle';
+
 const translatePath = 'resources.customers.forms.show';
 
 export default (props) => {
   const translate = useTranslate();
 
   return (
-    <Show {...props}>
+    <Show title={<CustomerName />} {...props}>
       <TabbedShowLayout>
         <Tab label={ translate(`${translatePath}.summaryTab`) } icon={ <PersonIcon /> }>
           <TextField source="id" />

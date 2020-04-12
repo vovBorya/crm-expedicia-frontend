@@ -1,0 +1,31 @@
+import React from 'react';
+import {
+  Filter,
+  ReferenceInput,
+  AutocompleteInput,
+  SelectInput,
+  BooleanInput
+} from 'react-admin';
+
+import {dealStatus} from '../../../utils/enums'
+
+const DealFilter = (props) => (
+  <Filter {...props}>
+    <SelectInput source="status" choices={dealStatus}/>
+    <ReferenceInput source="employeeId" reference="employees">
+      <AutocompleteInput optionText="fullName"/>
+    </ReferenceInput>
+    <ReferenceInput source="customerId" reference="customers">
+      <AutocompleteInput optionText="fullName"/>
+    </ReferenceInput>
+    <ReferenceInput source="childId" reference="children">
+      <AutocompleteInput optionText="fullName"/>
+    </ReferenceInput>
+    <ReferenceInput source="expeditionId" reference="expeditions">
+      <AutocompleteInput optionText="location"/>
+    </ReferenceInput>
+    <BooleanInput source="sleepingBag"/>
+  </Filter>
+);
+
+export default DealFilter;
