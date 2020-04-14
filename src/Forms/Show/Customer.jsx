@@ -45,7 +45,9 @@ export default (props) => {
             <Datagrid>
               <TextField source="type" />
               <TextField source="content" />
-              <TextField source="customerId" link="show"/>
+              <ReferenceField source="customerId" reference="customers">
+                <TextField source="fullName" show="link"/>
+              </ReferenceField>
               <ActionsColumn label="Actions" textAlign="right"/>
             </Datagrid>
           </ReferenceManyField>

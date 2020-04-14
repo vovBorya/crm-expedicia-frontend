@@ -38,7 +38,7 @@ export default (apiUrl, httpClient = fetchUtils.fetchJson) => ({
     const { page, perPage } = params.pagination;
     const { field, order } = params.sort;
     const query = {
-      ...fetchUtils.flattenObject(params.filter),
+      filter: JSON.stringify(fetchUtils.flattenObject(params.filter)),
       _sort: field,
       _order: order,
       _start: (page - 1) * perPage,

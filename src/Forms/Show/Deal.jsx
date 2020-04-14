@@ -8,7 +8,8 @@ import {
   ReferenceManyField,
   Datagrid,
   ReferenceField,
-  BooleanField
+  BooleanField,
+  RichTextField
 } from 'react-admin';
 
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
@@ -37,6 +38,7 @@ export default (props) => (
           <TextField source="location" />
         </ReferenceField>
         <BooleanField source="sleepingBag"/>
+        <RichTextField source="comment" />
       </Tab>
       <Tab label="Payments" icon={<AttachMoneyIcon/>} path="payments">
         <ReferenceManyField

@@ -3,7 +3,9 @@ import {
   List,
   Datagrid,
   ReferenceField,
-  TextField
+  TextField,
+  ChipField,
+  DateField
 } from 'react-admin';
 
 import ActionsColumn from '../../../components/ActionsColumn';
@@ -12,9 +14,9 @@ export default (props) => (
   <List {...props}>
     <Datagrid rowClick="show">
       <TextField source="id"/>
-      <TextField source="paidAt"/>
+      <DateField source="paidAt" locales="ru-RU" showTime/>
       <ReferenceField source="dealId" reference="deals" link="show">
-        <TextField source="id" label="Deal"/>
+        <ChipField source="id" />
       </ReferenceField>
       <TextField source="sum"/>
       <ActionsColumn label="Actions" textAlign="right"/>

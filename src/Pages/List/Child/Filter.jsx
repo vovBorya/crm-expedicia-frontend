@@ -8,7 +8,7 @@ import {
 
 const ChildFilter = (props) => (
   <Filter {...props}>
-    <SearchInput source="fullName" alwaysOn />
+    <SearchInput title="Full name" source="fullName" alwaysOn />
     <ReferenceInput source="parentId" reference="customers">
       <AutocompleteInput optionText="fullName" />
     </ReferenceInput>

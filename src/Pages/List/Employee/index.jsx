@@ -3,7 +3,8 @@ import {
   List,
   Datagrid,
   TextField,
-  EmailField
+  EmailField,
+  DateField
 } from 'react-admin';
 
 import ActionsColumn from '../../../components/ActionsColumn';
@@ -15,7 +16,7 @@ export default props => (
     <Datagrid rowClick="show">
       <TextField source="id" />
       <TextField source="fullName" />
-      <TextField source="birthday" />
+      <DateField source="birthday" locales="ru-RU"/>
       <TextField source="phone" />
       <TextField source="salary" />
       <EmailField source="email" />

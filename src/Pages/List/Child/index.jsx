@@ -16,7 +16,7 @@ export default props => (
     <Datagrid rowClick="show">
       <TextField source="id" />
       <TextField source="fullName" />
-      <DateField source="birthday"/>
+      <DateField source="birthday" locales="ru-RU"/>
       <ReferenceField
         source="parentId"
         reference="customers"

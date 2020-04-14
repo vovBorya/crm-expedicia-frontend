@@ -3,7 +3,10 @@ import {
   useTranslate,
   List, 
   Datagrid, 
-  TextField
+  TextField,
+  ReferenceManyField,
+  SingleFieldList,
+  ChipField
 } from 'react-admin';
 
 import ActionsColumn from '../../../components/ActionsColumn'
@@ -17,6 +20,15 @@ export default props => {
       <Datagrid rowClick="show">
         <TextField source="id" />
         <TextField source="fullName" />
+        <ReferenceManyField
+            label="Children"
+            reference="children"
+            target="parentId"
+        >
+          <SingleFieldList linkType="show">
+            <ChipField source="fullName" />
+          </SingleFieldList>
+        </ReferenceManyField>
         <ActionsColumn label={ translate('common.actions') } textAlign="right"/>
       </Datagrid>
     </List>
