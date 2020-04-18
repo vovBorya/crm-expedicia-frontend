@@ -1,6 +1,8 @@
 import { stringify } from 'query-string';
 import { fetchUtils } from 'react-admin';
 
+import defaultFilters from './defaultFilters';
+
 /**
  * Maps react-admin queries to a json-server powered REST API
  *
@@ -35,10 +37,11 @@ import { fetchUtils } from 'react-admin';
  */
 export default (apiUrl, httpClient = fetchUtils.fetchJson) => ({
   getList: (resource, params) => {
+
     const { page, perPage } = params.pagination;
     const { field, order } = params.sort;
     const query = {
-      filter: JSON.stringify(fetchUtils.flattenObject(params.filter)),
+      ...{ ...defaultFilters.children, ...fetchUtils.flattenObject(params.filter) },
       _sort: field,
       _order: order,
       _start: (page - 1) * perPage,

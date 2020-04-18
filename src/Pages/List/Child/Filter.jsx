@@ -1,18 +1,34 @@
-import React from 'react';
+import React from "react";
 import {
   Filter,
   ReferenceInput,
   AutocompleteInput,
-  SearchInput
-} from 'react-admin';
+  SearchInput,
+  useTranslate,
+} from "react-admin";
 
-const ChildFilter = (props) => (
-  <Filter {...props}>
-    <SearchInput title="Full name" source="fullName" alwaysOn />
-    <ReferenceInput source="parentId" reference="customers">
-      <AutocompleteInput optionText="fullName" />
-    </ReferenceInput>
-  </Filter>
-);
+import RangeInput from "../../../components/RangeInput";
+
+const translatePath = "resources.children.filters";
+
+const ChildFilter = (props) => {
+  const translate = useTranslate();
+
+  return (
+    <Filter {...props}>
+      <SearchInput title="Full name" source="fullName" alwaysOn />
+      <RangeInput
+        alwaysOn
+        title={translate(`${translatePath}.ageBetween`)}
+        source="ageBetween"
+        min={2}
+        max={18}
+      />
+      <ReferenceInput source="parentId" reference="customers">
+        <AutocompleteInput optionText="fullName" />
+      </ReferenceInput>
+    </Filter>
+  );
+};
 
 export default ChildFilter;
