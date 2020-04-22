@@ -15,6 +15,7 @@ import {
   SelectField
 } from 'react-admin';
 
+import { contactType } from '../../utils/enums';
 import { customerStatus } from '../../utils/enums';
 
 import PersonIcon from '@material-ui/icons/Person';
@@ -47,10 +48,12 @@ export default (props) => {
             reference="contacts"
             target="customerId"
           >
-            <Datagrid>
-              <TextField source="type" />
+            <Datagrid rowClick="show">
+              <SelectField source="type" choices={ contactType }/>
               <TextField source="content" />
-              <TextField source="customerId" link="show"/>
+              <ReferenceField source="customerId" reference="customers" link="show">
+                <TextField source="fullName" />
+              </ReferenceField>
               <ActionsColumn label="Actions" textAlign="right"/>
             </Datagrid>
           </ReferenceManyField>
