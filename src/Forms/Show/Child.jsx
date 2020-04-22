@@ -10,8 +10,11 @@ import {
   DateField,
   ReferenceField,
   BooleanField,
-  RichTextField
+  RichTextField,
+  SelectField
 } from 'react-admin';
+
+import { childStatus } from '../../utils/enums';
 
 import ChildCareIcon from '@material-ui/icons/ChildCare';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
@@ -32,7 +35,7 @@ export default (props) => (
           <TextField source="fullName" />
         </ReferenceField>
         <TextField source="city"/>
-        <TextField source="status"/>
+        <SelectField source="status" choices={ childStatus } />
         <RichTextField source="points"/>
       </Tab>
       <Tab label="Deals" icon={ <InsertDriveFileIcon />} path="deals">

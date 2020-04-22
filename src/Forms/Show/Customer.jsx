@@ -11,8 +11,11 @@ import {
   ReferenceField,
   useTranslate,
   BooleanField,
-  RichTextField
+  RichTextField,
+  SelectField
 } from 'react-admin';
+
+import { customerStatus } from '../../utils/enums';
 
 import PersonIcon from '@material-ui/icons/Person';
 import ContactsIcon from '@material-ui/icons/Contacts';
@@ -35,7 +38,7 @@ export default (props) => {
           <TextField source="id" />
           <TextField source="fullName" />
           <TextField source="city" />
-          <TextField source="status" />
+          <SelectField source="status" choices={ customerStatus }/>
           <RichTextField source="exemptions"/>
         </Tab>
         <Tab label={ translate(`${translatePath}.contactsTab`) } icon={ <ContactsIcon />} path="contacts">

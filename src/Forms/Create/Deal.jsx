@@ -9,6 +9,7 @@ import {
   BooleanInput,
   SelectInput
 } from 'react-admin';
+import RichTextInput from 'ra-input-rich-text';
 
 import { parse } from 'query-string';
 
@@ -45,6 +46,9 @@ export default (props) => {
       >
         <NumberInput source="sum"/>
         <SelectInput source="status" choices={dealStatus} defaultValue={"CREATED"}/>
+        <TextInput source="discount" />
+        <TextInput source="departurePlace" />
+        <TextInput source="transportationWay" />
         <ReferenceInput source="employeeId" reference="employees">
           <AutocompleteInput optionText="fullName"/>
         </ReferenceInput>
@@ -58,7 +62,7 @@ export default (props) => {
           <AutocompleteInput optionText="location"/>
         </ReferenceInput>
         <BooleanInput source="sleepingBag"/>
-        <TextInput source="comment"/>
+        <RichTextInput source="comment"/>
       </SimpleForm>
     </Create>
   );

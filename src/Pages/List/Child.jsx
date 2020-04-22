@@ -4,8 +4,11 @@ import {
   Datagrid,
   ReferenceField,
   TextField,
-  DateField
+  DateField,
+  SelectField
 } from 'react-admin';
+
+import { childStatus } from '../../utils/enums';
 
 import ActionsColumn from '../../components/ActionsColumn';
 
@@ -24,7 +27,7 @@ export default props => (
         <TextField source="fullName" />
       </ReferenceField>
       <TextField source="city"/>
-      <TextField source="status"/>
+      <SelectField source="status" choices={ childStatus } />
       <ActionsColumn label="Actions" textAlign="right"/>
     </Datagrid>
   </List>
