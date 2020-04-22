@@ -9,7 +9,8 @@ import {
   Datagrid,
   DateField,
   ReferenceField,
-  BooleanField
+  BooleanField,
+  RichTextField
 } from 'react-admin';
 
 import ChildCareIcon from '@material-ui/icons/ChildCare';
@@ -26,9 +27,13 @@ export default (props) => (
         <TextField source="id" />
         <TextField source="fullName" />
         <DateField source="birthday"/>
+        <TextField source="age" />
         <ReferenceField source="parentId" reference="customers" link="show">
           <TextField source="fullName" />
         </ReferenceField>
+        <TextField source="city"/>
+        <TextField source="status"/>
+        <RichTextField source="points"/>
       </Tab>
       <Tab label="Deals" icon={ <InsertDriveFileIcon />} path="deals">
         <ReferenceManyField

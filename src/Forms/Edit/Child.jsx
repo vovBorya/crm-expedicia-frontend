@@ -4,12 +4,16 @@ import {
   SimpleForm,
   TextInput,
   ReferenceInput,
-  AutocompleteInput
+  AutocompleteInput,
+  SelectInput
 } from 'react-admin';
+import RichTextInput from 'ra-input-rich-text';
 
 import { parse } from 'query-string';
 
 import { DateInput } from "../../components/DateTimeInput";
+
+import { childStatus } from "../../utils/enums";
 
 export default (props) => {
   const { parentId: paramParentId } = parse(props.location.search);
@@ -26,6 +30,9 @@ export default (props) => {
         <ReferenceInput source="parentId" reference="customers">
           <AutocompleteInput optionText="fullName" />
         </ReferenceInput>
+        <TextInput source="city" />
+        <SelectInput source="status" choices={childStatus}/>
+        <RichTextInput source="points" />
       </SimpleForm>
     </Edit>
   );
