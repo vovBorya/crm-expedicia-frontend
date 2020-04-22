@@ -10,7 +10,8 @@ import {
   DateField,
   ReferenceField,
   useTranslate,
-  BooleanField
+  BooleanField,
+  RichTextField
 } from 'react-admin';
 
 import PersonIcon from '@material-ui/icons/Person';
@@ -33,6 +34,9 @@ export default (props) => {
         <Tab label={ translate(`${translatePath}.summaryTab`) } icon={ <PersonIcon /> }>
           <TextField source="id" />
           <TextField source="fullName" />
+          <TextField source="city" />
+          <TextField source="status" />
+          <RichTextField source="exemptions"/>
         </Tab>
         <Tab label={ translate(`${translatePath}.contactsTab`) } icon={ <ContactsIcon />} path="contacts">
           <ReferenceManyField

@@ -16,6 +16,8 @@ export default props => {
       <Datagrid rowClick="show">
         <TextField source="id" />
         <TextField source="fullName" />
+        <TextField source="city" />
+        <TextField source="status" />
         <ActionsColumn label={ translate('common.actions') } textAlign="right"/>
       </Datagrid>
     </List>

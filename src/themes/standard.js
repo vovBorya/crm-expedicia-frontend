@@ -4,7 +4,7 @@ export default {
   palette: {
     secondary: {
       light: '#6ec6ff',
-      main: '#2196f3',
+      main: '#FFA000',
       dark: '#0069c0',
       contrastText: '#fff',
     },

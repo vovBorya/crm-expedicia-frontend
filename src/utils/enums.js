@@ -22,3 +22,9 @@ export const childStatus = [
   {id: 'INSTRUCTOR', name: 'Instructor'},
   {id: 'CURATOR', name: 'Curator'}
 ]
+
+export const customerStatus = [
+  {id: 'PARENT', name: 'Parent'},
+  {id: 'INSTRUCTOR', name: 'Instructor'},
+  {id: 'VOLUNTEER', name: 'Volunteer'}
+]
