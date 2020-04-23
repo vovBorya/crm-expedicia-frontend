@@ -5,8 +5,11 @@ import {
   Datagrid,
   ReferenceField,
   TextField,
-  BooleanField
+  BooleanField,
+  SelectField
 } from 'react-admin';
+
+import { dealStatus } from '../../utils/enums';
 
 import ActionsColumn from '../../components/ActionsColumn';
 
@@ -15,7 +18,7 @@ export default (props) => (
     <Datagrid rowClick="show">
       <TextField source="id"/>
       <TextField source="sum"/>
-      <TextField source="status"/>
+      <SelectField source="status" choices={ dealStatus }/>
       <ReferenceField label="Employee" source="employeeId" reference="employees" link="show">
         <TextField source="fullName" />
       </ReferenceField>

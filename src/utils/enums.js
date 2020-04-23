@@ -16,3 +16,15 @@ export const contactType = [
   {id: 'WEBSITE', name: 'Website'},
   {id: 'OTHER', name: 'Other'}
 ]
+
+export const childStatus = [
+  {id: 'PARTICIPANT', name: 'Participant'},
+  {id: 'INSTRUCTOR', name: 'Instructor'},
+  {id: 'CURATOR', name: 'Curator'}
+]
+
+export const customerStatus = [
+  {id: 'PARENT', name: 'Parent'},
+  {id: 'INSTRUCTOR', name: 'Instructor'},
+  {id: 'VOLUNTEER', name: 'Volunteer'}
+]

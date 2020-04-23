@@ -8,8 +8,12 @@ import {
   ReferenceManyField,
   Datagrid,
   ReferenceField,
-  BooleanField
+  BooleanField,
+  RichTextField,
+  SelectField
 } from 'react-admin';
+
+import { dealStatus } from '../../utils/enums';
 
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
@@ -23,7 +27,10 @@ export default (props) => (
       <Tab label="Deal" icon={<InsertDriveFileIcon/>}>
         <TextField source="id"/>
         <TextField source="sum"/>
-        <TextField source="status"/>
+        <SelectField source="status" choices={ dealStatus }/>
+        <TextField source="discount" />
+        <TextField source="departurePlace" />
+        <TextField source="transportationWay" />
         <ReferenceField source="employeeId" reference="employees" link="show">
           <TextField source="fullName" />
         </ReferenceField>
@@ -37,6 +44,7 @@ export default (props) => (
           <TextField source="location" />
         </ReferenceField>
         <BooleanField source="sleepingBag"/>
+        <RichTextField source="comment" />
       </Tab>
       <Tab label="Payments" icon={<AttachMoneyIcon/>} path="payments">
         <ReferenceManyField

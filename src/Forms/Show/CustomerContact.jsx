@@ -5,8 +5,11 @@ import {
   TabbedShowLayout,
   Tab,
   TextField,
-  ReferenceField
-} from 'react-admin'
+  ReferenceField,
+  SelectField
+} from 'react-admin';
+
+import { contactType } from '../../utils/enums';
 
 import ContactsIcon from '@material-ui/icons/Contacts';
 
@@ -15,7 +18,7 @@ export default (props) => (
     <TabbedShowLayout>
       <Tab label="Contact" icon={<ContactsIcon/>}>
         <TextField source="id"/>
-        <TextField source="type"/>
+        <SelectField source="type" choices={ contactType }/>
         <TextField source="content"/>
         <ReferenceField source="customerId" reference="customers">
           <TextField source="fullName" />

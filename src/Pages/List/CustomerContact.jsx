@@ -3,8 +3,11 @@ import {
   List,
   Datagrid,
   ReferenceField,
-  TextField
+  TextField,
+  SelectField
 } from 'react-admin';
+
+import { contactType } from '../../utils/enums';
 
 import ActionsColumn from '../../components/ActionsColumn';
 
@@ -12,7 +15,7 @@ export default (props) => (
   <List {...props}>
     <Datagrid rowClick="show">
       <TextField source="id"/>
-      <TextField source="type"/>
+      <SelectField source="type" choices={ contactType }/>
       <TextField source="content"/>
       <ReferenceField source="customerId" reference="customers">
         <TextField source="fullName" />

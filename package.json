@@ -12,6 +12,7 @@
     "material-ui-pickers": "^2.2.4",
     "prop-types": "^15.7.2",
     "query-string": "^6.11.1",
+    "ra-input-rich-text": "^3.3.1",
     "ra-language-russian": "^3.2.1",
     "ra-language-ukrainian": "^2.3.0",
     "react": "^16.13.0",

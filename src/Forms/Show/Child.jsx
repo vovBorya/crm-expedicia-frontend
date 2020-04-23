@@ -9,8 +9,12 @@ import {
   Datagrid,
   DateField,
   ReferenceField,
-  BooleanField
+  BooleanField,
+  RichTextField,
+  SelectField
 } from 'react-admin';
+
+import { childStatus } from '../../utils/enums';
 
 import ChildCareIcon from '@material-ui/icons/ChildCare';
 import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
@@ -26,9 +30,13 @@ export default (props) => (
         <TextField source="id" />
         <TextField source="fullName" />
         <DateField source="birthday"/>
+        <TextField source="age" />
         <ReferenceField source="parentId" reference="customers" link="show">
           <TextField source="fullName" />
         </ReferenceField>
+        <TextField source="city"/>
+        <SelectField source="status" choices={ childStatus } />
+        <RichTextField source="points"/>
       </Tab>
       <Tab label="Deals" icon={ <InsertDriveFileIcon />} path="deals">
         <ReferenceManyField
