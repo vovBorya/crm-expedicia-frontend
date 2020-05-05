@@ -8,8 +8,9 @@ export default {
     status: '%',
     expeditionId: '',
     sumBetween: '',
-    employeeName: '',
-    customerName: '',
-    childName: ''
+    employeeId: '',
+    customerId: '',
+    childId: '',
+    sleepingBag: ''
   }
 }
