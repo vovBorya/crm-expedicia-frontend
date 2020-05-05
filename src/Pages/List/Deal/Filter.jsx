@@ -1,17 +1,25 @@
-import React from 'react';
+import React from "react";
 import {
   Filter,
   ReferenceInput,
   AutocompleteInput,
   SelectInput,
   BooleanInput
-} from 'react-admin';
+} from "react-admin";
 
-import {dealStatus} from '../../../utils/enums'
+import RangeInput from "../../../components/RangeInput";
+
+import {dealStatus} from "../../../utils/enums";
 
 const DealFilter = (props) => (
   <Filter {...props}>
     <SelectInput source="status" choices={dealStatus}/>
+    <RangeInput
+      title={"Sum between"}
+      source="sumBetween"
+      min={0}
+      max={40000}
+    />
     <ReferenceInput source="employeeId" reference="employees">
       <AutocompleteInput optionText="fullName"/>
     </ReferenceInput>
