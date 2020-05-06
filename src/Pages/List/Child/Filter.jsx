@@ -18,7 +18,6 @@ const ChildFilter = (props) => {
     <Filter {...props}>
       <SearchInput title="Full name" source="fullName" alwaysOn />
       <RangeInput
-        alwaysOn
         title={translate(`${translatePath}.ageBetween`)}
         source="ageBetween"
         min={2}
