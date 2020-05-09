@@ -9,6 +9,7 @@ import {
   Datagrid,
   ReferenceField,
   BooleanField,
+  SelectField,
   RichTextField
 } from 'react-admin';
 

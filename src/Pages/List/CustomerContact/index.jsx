@@ -10,6 +10,8 @@ import {
 import ActionsColumn from '../../../components/ActionsColumn';
 import Filter from './Filter';
 
+import { contactType } from '../../../utils/enums';
+
 export default props => (
   <List {...props} filters={ <Filter /> }>
     <Datagrid rowClick="show">

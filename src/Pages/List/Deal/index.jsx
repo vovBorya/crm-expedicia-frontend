@@ -13,6 +13,8 @@ import ActionsColumn from '../../../components/ActionsColumn';
 
 import Filter from './Filter'
 
+import { dealStatus } from '../../../utils/enums';
+
 export default (props) => (
   <List {...props} filters={ <Filter/> }>
     <Datagrid rowClick="show">
