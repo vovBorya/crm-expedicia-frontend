@@ -8,6 +8,7 @@ import {
   BooleanInput,
   SelectInput
 } from 'react-admin';
+import RichTextInput from 'ra-input-rich-text';
 
 import RichTextInput from 'ra-input-rich-text';
 
@@ -46,6 +47,9 @@ export default (props) => {
       >
         <NumberInput source="sum"/>
         <SelectInput source="status" choices={dealStatus} defaultValue={"CREATED"}/>
+        <TextInput source="discount" />
+        <TextInput source="departurePlace" />
+        <TextInput source="transportationWay" />
         <ReferenceInput source="employeeId" reference="employees">
           <AutocompleteInput optionText="fullName"/>
         </ReferenceInput>
