@@ -10,7 +10,6 @@ import {
 
 import { DateTimeInput } from '../../components/DateTimeInput';
 
-
 import { parse } from 'query-string';
 
 export default (props) => {

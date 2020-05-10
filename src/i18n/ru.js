@@ -17,6 +17,12 @@ export default {
     },
   },
   resources: {
+    children: {
+      name: "Ребёнок |||| Дети",
+      filters: {
+        ageBetween: "Возраст"
+      }
+    },
     customers: {
       name: "Клиент |||| Клиенты",
       fields: {

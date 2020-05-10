@@ -23,14 +23,15 @@ import InsertDriveFileIcon from '@material-ui/icons/InsertDriveFile';
 import AddRelatedButton from '../../components/AddRelatedButton';
 import ActionsColumn from '../../components/ActionsColumn';
 
+import ChildName from '../../components/ShowTitle';
+
 export default (props) => (
-  <Show {...props}>
+  <Show title={<ChildName/>} {...props}>
     <TabbedShowLayout>
       <Tab label="Child" icon={ <ChildCareIcon />}>
         <TextField source="id" />
         <TextField source="fullName" />
-        <DateField source="birthday"/>
-        <TextField source="age" />
+        <DateField source="birthday" options={{ format: "yyyy-MM-dd"}}/>
         <ReferenceField source="parentId" reference="customers" link="show">
           <TextField source="fullName" />
         </ReferenceField>

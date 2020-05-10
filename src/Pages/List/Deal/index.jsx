@@ -9,12 +9,14 @@ import {
   SelectField
 } from 'react-admin';
 
-import { dealStatus } from '../../utils/enums';
+import ActionsColumn from '../../../components/ActionsColumn';
 
-import ActionsColumn from '../../components/ActionsColumn';
+import Filter from './Filter'
+
+import { dealStatus } from '../../../utils/enums';
 
 export default (props) => (
-  <List {...props}>
+  <List {...props} filters={ <Filter/> }>
     <Datagrid rowClick="show">
       <TextField source="id"/>
       <TextField source="sum"/>

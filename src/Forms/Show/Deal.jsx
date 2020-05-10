@@ -9,8 +9,8 @@ import {
   Datagrid,
   ReferenceField,
   BooleanField,
-  RichTextField,
-  SelectField
+  SelectField,
+  RichTextField
 } from 'react-admin';
 
 import { dealStatus } from '../../utils/enums';

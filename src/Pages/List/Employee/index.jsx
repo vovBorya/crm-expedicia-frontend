@@ -3,17 +3,20 @@ import {
   List,
   Datagrid,
   TextField,
-  EmailField
+  EmailField,
+  DateField
 } from 'react-admin';
 
-import ActionsColumn from '../../components/ActionsColumn';
+import ActionsColumn from '../../../components/ActionsColumn';
+
+import Filter from './Filter';
 
 export default props => (
-  <List {...props}>
+  <List {...props} filters={<Filter />}>
     <Datagrid rowClick="show">
       <TextField source="id" />
       <TextField source="fullName" />
-      <TextField source="birthday" />
+      <DateField source="birthday" locales="ru-RU"/>
       <TextField source="phone" />
       <TextField source="salary" />
       <EmailField source="email" />

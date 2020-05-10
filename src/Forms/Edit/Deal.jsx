@@ -2,11 +2,11 @@ import React from 'react';
 import {
   Edit,
   SimpleForm,
-  TextInput,
   NumberInput,
   ReferenceInput,
   AutocompleteInput,
   BooleanInput,
+  TextInput,
   SelectInput
 } from 'react-admin';
 import RichTextInput from 'ra-input-rich-text';
@@ -62,7 +62,7 @@ export default (props) => {
           <AutocompleteInput optionText="location" />
         </ReferenceInput>
         <BooleanInput source="sleepingBag"/>
-        <RichTextInput source="comment"/>
+        <RichTextInput toolbar={[ ['bold', 'italic', 'underline'] ]} source="comment"/>
       </SimpleForm>
     </Edit>
   );
